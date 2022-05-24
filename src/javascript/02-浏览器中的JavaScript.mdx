@@ -1,0 +1,49 @@
+---
+name: 02-浏览器中的JS
+route: /js/browser
+menu: JavaScript
+hidden: false
+---
+
+import JCode from '../components/jcode';
+
+10年前，JavaScript主要运行在浏览器上，在浏览器之外还很少见到。而今天，JavaScript不仅运行于浏览器，由于Node.js的流行，还可以运行于许多Linux-based的系统中。
+
+虽然JavaScript运行环境已经大大超越了浏览器范畴，但是，浏览器仍然是JavaScript最重要的宿主和运行环境。接下来我们先来看一看浏览器中的JavaScript。
+
+> 10年前，IE6、IE7浏览器还占有较大的市场份额，很多新的语言特性和先进的API出于兼容性考虑，开发者无法使用。而今天，IE浏览器已经不是市场的主流，截至本书编写时，Chrome浏览器的最新稳定版本是68，FireFox的版本是61，微软Edge的版本是42，Safari的版本是11.0，这些浏览器都能可靠地支持ES5和ES6+的绝大多数特性。
+>
+> 虽然现代浏览器都可以支持最新JavaScript的大部分特性，但是它们功能上和一些细节上还是有一些差异。为了学习方便，建议读者下载安装和使用最新的[Chrome浏览器](https://www.google.com/chrome/)。本书后续浏览器有关的内容，都选择Chrome 68以上浏览器作为基准环境。
+
+### 1.2.1 在网页中嵌入JS
+
+在浏览器网页中加载和运行JavaScript非常简单，甚至不需要额外安装任何环境，直接用任意文本编辑器写一个简单的网页即可：
+
+**例 1.2.1**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript王者归来</title>
+</head>
+<body>
+  <h1>我的第一个 JavaScript 程序!</h1>
+  <script type="text/javascript">
+    console.log('Hello World!');
+  </script>
+</body>
+</html>
+```
+
+将上面的代码保存成index.html，用使用Chrome浏览器打开，并开启开发者控制台，控制台开启的快捷键为windows系统的F12或ctrl+shift+I，Mac系统的Opt+Cmd+I。如果一切正常，你会看到下面的界面。
+
+![image](public/example1.2.1.jpg)
+
+`console.log`方法在右边的的开发者控制台上显示了字符串`Hello World!`。
+
+### 👉🏻 动手练习
+
+<JCode codeId="7101205186751758367"></JCode>
+

@@ -1,0 +1,27 @@
+{
+  "name": "edu.juejin.fun",
+  "version": "0.0.1",
+  "description": "掘金社区学习资料",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run docz:dev",
+    "docz:dev": "docz dev --port=3000",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve",
+    "prepublishOnly": "npm run docz:build && rm -rf docs && cp -R .docz/dist docs",
+    "deploy": "npm run prepublishOnly && http-server docs -c-1 -p8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@emotion/core": "^10.1.1",
+    "docz": "^2.4.0",
+    "http-server": "^14.1.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "remark-mdx": "^2.0.0-next.9",
+    "typescript": "^4.6.4"
+  }
+}
