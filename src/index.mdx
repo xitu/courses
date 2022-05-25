@@ -1,8 +1,39 @@
 ---
 name: 首页
 route: /
+hidden: true
 ---
 
-# 首页
+import { Playground } from 'docz';
+import JCode from './components/jcode';
 
-学习内容
+# 简介
+
+**[稀土教程](https://github.com/xitu/courses)**是由[稀土掘金社区](https://juejin.cn)开源共建的面向职业开发者的学习资料。
+
+## 创建文档
+
+稀土教程基于[Docz](https://www.docz.site/)构建，并且在Github开源。你可以在[GitHub仓库](https://github.com/xitu/courses)中添加内容，具体的方式是直接在src目录下任意子目录中添加`mdx`文件。
+
+`MDX`是Markdown语法扩展，你可以使用所有标准的Markdown语法，且能够引入`React Components`，你甚至可以根据实际需要，开发自己的组件。
+
+只要你在添加的`MDX`文件的开头添加`name`、`route`、`menu`配置：
+
+```mdx
+---
+name: 文件名
+route: /路径
+menu: 目录
+---
+```
+
+就可以在教程的左侧菜单中显示出来。
+
+
+## 管理目录
+
+## Components
+
+<Playground>
+  <JCode codeId="7101205186751758367"></JCode>
+</Playground>

@@ -16,12 +16,10 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@emotion/core": "^10.1.1",
     "docz": "^2.4.0",
     "http-server": "^14.1.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "remark-mdx": "^2.0.0-next.9",
-    "typescript": "^4.6.4"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "remark-mdx": "^2.0.0-next.9"
   }
 }

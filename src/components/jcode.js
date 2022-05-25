@@ -13,6 +13,7 @@ export default class extends Component {
       <iframe src={source}
         scrolling="yes"
         style={iframeStyle}
+        title="jcode"
       ></iframe>
     );
   }
