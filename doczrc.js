@@ -8,7 +8,7 @@ export default {
   menu: [
     { name: 'JavaScript', menu: [
         '概览',
-        '浏览器中的JS'
+        '浏览器中的JS',
       ] 
     },
     {

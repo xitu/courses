@@ -35,7 +35,6 @@ export const Sidebar = forwardRef(function Sidebar(props, ref) {
         />
         {menus &&
           menus.map(menu => {
-            console.log(menu)
             if (!menu.route)
               return <NavGroup key={menu.id} item={menu} sidebarRef={ref} />
             if (menu.route === currentDoc.route) {
