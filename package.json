@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "掘金社区学习资料",
   "main": "index.js",
+  "repository": "https://github.com/xitu/courses",
   "scripts": {
     "start": "npm run docz:dev",
     "docz:dev": "docz dev --port=3000",
@@ -16,8 +17,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@emotion/styled": "^10.3.0",
     "docz": "^2.4.0",
     "http-server": "^14.1.0",
+    "katex": "^0.15.6",
+    "mermaid": "^9.1.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "remark-mdx": "^2.0.0-next.9"

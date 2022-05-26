@@ -5,11 +5,17 @@ hidden: true
 ---
 
 import { Playground } from 'docz';
-import JCode from './components/jcode';
+import { JCode } from '@/JCode';
 
 # 简介
 
 **[稀土教程](https://github.com/xitu/courses)**是由[稀土掘金社区](https://juejin.cn)开源共建的面向职业开发者的学习资料。
+
+如果你是来学习的，点开左侧菜单，选择你想学习的课程，就可以愉快地开启你的学习之旅！
+
+如果你想加入到课程内容贡献者的行列，那你可以仔细往下阅读这篇文章。
+
+---
 
 ## 创建文档
 
@@ -33,8 +39,82 @@ submenu: 二级目录
 
 ## 管理目录
 
+`Docz` 支持配置目录顺序，你可以编辑`doczrc.js`，修改目录配置，例如：
+
+```js
+  menu: [
+    { name: 'JavaScript', menu: [
+        '概览',
+        '浏览器中的JS',
+      ] 
+    },
+    {
+      name: 'HTML', menu: [
+        '概览',
+      ]
+    },
+    {
+      name: 'CSS', menu: [
+        '概览',
+      ]
+    },
+  ]
+```
+
+如果不修改，默认会按照字符串顺序排列目录。
+
 ## Components
+
+`MDX`支持非常灵活的组件扩展能力，你可以在`src/components`目录下添加自定义组件，比如目前已有的[码上掘金组件](https://github.com/xitu/courses/tree/main/src/components/JCode)。
+
+`Docz`默认提供了`Playground`组件，它可以嵌入其他组件代码并支持实时编辑和运行，例如下面的代码演示了`码上掘金组件`，你可以更换`codeId`来替换不同的码上掘金代码块。
 
 <Playground>
   <JCode codeId="7101205186751758367"></JCode>
 </Playground>
+
+我默认扩展了一些常用组件，比如顶部菜单：
+
+import {TopMenu} from '@/TopMenu';
+
+<Playground>
+  <TopMenu
+    code="//code.juejin.cn"
+    pins="//juejin.cn/pins/club/6824710202655244301"
+    docs="//juejin.cn"
+  />
+</Playground>
+
+还可以基于[mermaid](https://mermaid-js.github.io/mermaid)绘制流程图：
+
+import {Diagram} from '@/Diagram';
+
+<Playground>
+  <Diagram theme="dark">{`
+    graph TD
+    Start --> Stop
+  `}</Diagram>
+</Playground>
+
+基于[KaTeX](https://katex.org/)书写公式：
+
+import {KaTeX} from '@/KaTeX';
+
+<Playground>
+  <KaTeX macros="{'\\f': '#1f(#2)'}">{`
+    \\f\\relax{x} = \\int_{-\\infty}^\\infty
+        \\f\\hat\\xi\\,e^{2 \\pi i \\xi x}
+        \\,d\\xi
+  `}</KaTeX>
+</Playground>
+
+## 本地调试
+
+将Github仓库代码Clone到本地，安装依赖：`npm install`，然后运行`npm start`即可运行。
+
+## 生成和部署
+
+运行`npm run docz:build`，将目录`.docz/dist`下的文件部署到服务器即可。
+
+如果要更新`github.io`的服务，运行`npm run prepublishOnly`然后提交PR到Github仓库，merge后网站内容就会更新。
+
