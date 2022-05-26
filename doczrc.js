@@ -10,7 +10,7 @@ export default {
     }
   },
   base: '/courses/',
-  src: 'src',
+  files: 'src/**/*.{md,markdown,mdx}',
   editBranch: 'main',
   menu: [
     { name: 'JavaScript', menu: [
