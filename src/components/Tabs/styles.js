@@ -50,4 +50,5 @@ export const TabPane = styled.div`
   border: 1px solid ${getBorderColor};
   border-radius: 0 3px 3px 3px;
   margin-top: -1px;
+  margin-bottom: 16px;
 `;
