@@ -14,6 +14,8 @@ const digest = str =>
     .update(str)
     .digest('hex')
 
+const wipStyle = {opacity: 0.5};
+
 export const NavGroup = ({ item, sidebarRef, nested }) => {
   const currentDoc = useCurrentDoc()
   const currentDocRef = useRef()
@@ -60,9 +62,23 @@ export const NavGroup = ({ item, sidebarRef, nested }) => {
               return <NavGroup key={menu.id} item={menu} sidebarRef={sidebarRef} nested={true}/>
             }
             if (currentDoc.route === menu.route) {
+              if(menu.WIP) {
+                return (
+                  <NavLink key={menu.id} item={menu} ref={currentDocRef} style={wipStyle}>
+                    {`🕓 ${menu.name}`}
+                  </NavLink>
+                )
+              }
               return (
                 <NavLink key={menu.id} item={menu} ref={currentDocRef}>
                   {menu.name}
+                </NavLink>
+              )
+            }
+            if(menu.WIP) {
+              return (
+                <NavLink key={menu.id} item={menu} style={wipStyle}>
+                  {`🕓 ${menu.name}`}
                 </NavLink>
               )
             }

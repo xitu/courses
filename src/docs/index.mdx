@@ -85,6 +85,24 @@ import {TopMenu} from '@/TopMenu';
   />
 </Playground>
 
+Tabs:
+
+import {Tabs} from '@/Tabs';
+
+<Playground>
+  <Tabs activeId="1">
+    <Tabs.Tab id="1" title="Tab 1">
+      Tab content 1
+    </Tabs.Tab>
+    <Tabs.Tab id="2" title="Tab 2">
+      Tab content 2
+    </Tabs.Tab>
+    <Tabs.Tab id="3" title={<i>Tab 3</i>}>
+      Tab content 3
+    </Tabs.Tab>
+  </Tabs>
+</Playground>
+
 还可以基于[mermaid](https://mermaid-js.github.io/mermaid)绘制流程图：
 
 import {Diagram} from '@/Diagram';
@@ -111,6 +129,8 @@ import {KaTeX} from '@/KaTeX';
 ## 本地调试
 
 将Github仓库代码Clone到本地，安装依赖：`npm install`，然后运行`npm start`即可运行。
+
+**注意** :dog:，因为需要一些MDX插件来正确解析MD语法，但是docz的[bug未修复](https://github.com/doczjs/docz/issues/1629)，所以要解析正确的格式，只能手动将项目根目录下的`gatsby-config.fix.js`内容替换`node_modules/gatsby-theme-docz/gatsby-config.js`（不替换也不影响本地运行，只是有些MD语法扩展解析不了）。
 
 ## 生成和部署
 
