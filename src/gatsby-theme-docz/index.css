@@ -66,3 +66,20 @@ p.hint.error {
 p.hint.error:before {
   background-color: #ef4e4e;
 }
+
+dl.jj-articles dd {
+  font-size: 16px;
+  margin-inline-start: auto;
+  margin-bottom: 36px;
+}
+
+dl.jj-articles a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+dl.jj-articles author {
+  position: absolute;
+  right: 80px;
+  margin-top: 26px;
+}
