@@ -8,7 +8,14 @@ import {Tab} from './tab';
 
 const Pane = () => {
   const {current} = useTabsContext();
-  return current ? <TabPane>{current.children}</TabPane> : null;
+  if(current) {
+    const children = current.children;
+    if(typeof children === 'string') {
+      return <TabPane dangerouslySetInnerHTML={{__html: children}}></TabPane>
+    }
+    return <TabPane>{children}</TabPane>
+  }
+  return null;
 };
 Pane.propTypes = {
   activeId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

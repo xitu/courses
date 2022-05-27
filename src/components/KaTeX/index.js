@@ -6,7 +6,6 @@ function createMarkup(__html) {
   return {__html}
 }
 
-
 export const KaTeX = ({children, ...props}) => {
   const {macros, ...opts} = props
 
