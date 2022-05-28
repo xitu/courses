@@ -33,6 +33,7 @@ export const NavGroup = ({ item, sidebarRef, nested }) => {
   const menus = [];
   for(let i = 0; i < menu.length; i++) {
     const {submenu, ...m} = menu[i]
+    m.name = m.displayName || m.name;
     if(submenu && !submenus[submenu]) {
       const s = {
         name: submenu,

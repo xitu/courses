@@ -12,6 +12,8 @@ export default {
   base: '/courses/',
   files: 'src/**/*.{md,markdown,mdx}',
   editBranch: 'main',
+
+  /* 设置菜单顺序 */
   menu: [
     { name: 'JavaScript', menu: [
         '概览',
