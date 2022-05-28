@@ -130,7 +130,9 @@ import {KaTeX} from '@/KaTeX';
 
 将Github仓库代码Clone到本地，安装依赖：`npm install`，然后运行`npm start`即可运行。
 
-**注意** :dog:，因为需要一些MDX插件来正确解析MD语法，但是docz的[bug未修复](https://github.com/doczjs/docz/issues/1629)，所以要解析正确的格式，只能手动将项目根目录下的`gatsby-config.fix.js`内容替换`node_modules/gatsby-theme-docz/gatsby-config.js`（不替换也不影响本地运行，只是有些MD语法扩展解析不了）。
+**注意** :dog:，因为需要一些MDX插件来正确解析MD语法，但是docz的[bug未修复](https://github.com/doczjs/docz/issues/1629)，在第一次运行`npm start`的时候，项目会自动将根目录下的`gatsby-config.fix.js`内容替换到`node_modules/gatsby-theme-docz/gatsby-config.js`中。
+
+可能是因为docz的Gatsby版本较老，第一次访问develop环境`localhost:3000`会有点慢，页面刷出来之后就可以热更新了。build后部署的版本没有这个问题。
 
 ## 生成和部署
 

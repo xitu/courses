@@ -72,6 +72,7 @@ module.exports = opts => {
       {
         resolve: 'gatsby-plugin-mdx',
         options: {
+          lessBabel: true,
           extensions: config.mdxExtensions,
           remarkPlugins:
             config && config.mdPlugins

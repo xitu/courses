@@ -246,11 +246,15 @@ function MDXContent(_ref) {
   }, "\u6CE8\u610F"), " \uD83D\uDC36\uFF0C\u56E0\u4E3A\u9700\u8981\u4E00\u4E9BMDX\u63D2\u4EF6\u6765\u6B63\u786E\u89E3\u6790MD\u8BED\u6CD5\uFF0C\u4F46\u662Fdocz\u7684", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("a", {
     parentName: "p",
     "href": "https://github.com/doczjs/docz/issues/1629"
-  }, "bug\u672A\u4FEE\u590D"), "\uFF0C\u6240\u4EE5\u8981\u89E3\u6790\u6B63\u786E\u7684\u683C\u5F0F\uFF0C\u53EA\u80FD\u624B\u52A8\u5C06\u9879\u76EE\u6839\u76EE\u5F55\u4E0B\u7684", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+  }, "bug\u672A\u4FEE\u590D"), "\uFF0C\u5728\u7B2C\u4E00\u6B21\u8FD0\u884C", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
-  }, "gatsby-config.fix.js"), "\u5185\u5BB9\u66FF\u6362", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+  }, "npm start"), "\u7684\u65F6\u5019\uFF0C\u9879\u76EE\u4F1A\u81EA\u52A8\u5C06\u6839\u76EE\u5F55\u4E0B\u7684", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
-  }, "node_modules/gatsby-theme-docz/gatsby-config.js"), "\uFF08\u4E0D\u66FF\u6362\u4E5F\u4E0D\u5F71\u54CD\u672C\u5730\u8FD0\u884C\uFF0C\u53EA\u662F\u6709\u4E9BMD\u8BED\u6CD5\u6269\u5C55\u89E3\u6790\u4E0D\u4E86\uFF09\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }, "gatsby-config.fix.js"), "\u5185\u5BB9\u66FF\u6362\u5230", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, "node_modules/gatsby-theme-docz/gatsby-config.js"), "\u4E2D\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u53EF\u80FD\u662F\u56E0\u4E3Adocz\u7684Gatsby\u7248\u672C\u8F83\u8001\uFF0C\u7B2C\u4E00\u6B21\u8BBF\u95EEdevelop\u73AF\u5883", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, "localhost:3000"), "\u4F1A\u6709\u70B9\u6162\uFF0C\u9875\u9762\u5237\u51FA\u6765\u4E4B\u540E\u5C31\u53EF\u4EE5\u70ED\u66F4\u65B0\u4E86\u3002build\u540E\u90E8\u7F72\u7684\u7248\u672C\u6CA1\u6709\u8FD9\u4E2A\u95EE\u9898\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "生成和部署"
   }, "\u751F\u6210\u548C\u90E8\u7F72"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u8FD0\u884C", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
