@@ -20,5 +20,5 @@
 
 ## TODO
 
-[] 制定mdx文件名与name的建议规范，写一个检查menu下的文件中是否存在配置name重复的脚本，如果有重复，解决冲突并生成displayName
-[] 待进一步优化Gatsby的编译性能
+- [ ] 制定mdx文件名与name的建议规范，写一个检查menu下的文件中是否存在配置name重复的脚本，如果有重复，解决冲突并生成displayName
+- [ ] 待进一步优化Gatsby的编译性能
