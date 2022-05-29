@@ -11,7 +11,7 @@ if(!self.__list) {
   self.__list = (items) => {
     const ret = items.map(([name, desc, link, author]) => {
       return `<dt><h3><a href="${link}" target="_blank">${name}</a></h3></dt>
-      <dd><a href="${link}" target="_blank">${desc}${author?`<author>作者：${author}</author>`:''}</a></dd>`
+      <dd><a href="${link}" target="_blank">${desc}${author?`<author>${author}</author>`:''}</a></dd>`
     }).join('');
     return `<dl class="jj-articles">${ret}</dl>`;
   }

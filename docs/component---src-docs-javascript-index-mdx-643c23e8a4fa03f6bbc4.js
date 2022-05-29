@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-概览-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-index-mdx"],{
 
-/***/ "V1J4":
-/*!*************************************!*\
-  !*** ../src/docs/javascript/概览.mdx ***!
-  \*************************************/
+/***/ "9HhT":
+/*!****************************************!*\
+  !*** ../src/docs/javascript/index.mdx ***!
+  \****************************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40,7 +40,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/javascript/\u6982\u89C8.mdx"
+      filename: "src/docs/javascript/index.mdx"
     }
   });
 }
@@ -289,7 +289,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/javascript/\u6982\u89C8.mdx"
+      filename: "src/docs/javascript/index.mdx"
     }
   });
 }
