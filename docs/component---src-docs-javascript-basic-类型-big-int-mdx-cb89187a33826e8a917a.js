@@ -64,7 +64,7 @@ function MDXContent(_ref) {
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_Tabs__WEBPACK_IMPORTED_MODULE_5__["Tabs"].Tab, {
     id: "1",
     title: "\u53C2\u8003\u8D44\u6599\uD83D\uDCD6"
-  }, __list([['BigInt了解一下', 'BigInt 是一种内置对象，它提供了一种方法来表示大于 2^53-1的整数。这原本是 Javascript 中可以用 Number 表示的最大数字。BigInt 可以表示任意大的整数。', 'https://juejin.cn/post/6901998336123863053', '前端AK君'], ['JS最新基本数据类型：BigInt', 'BigInt数据类型的目的是比Number数据类型支持的范围更大的整数值。在对大整数执行数学运算时，以任意精度表示整数的能力尤为重要。使用BigInt，整数溢出将不再是问题。', 'https://juejin.cn/post/6844903902295359502', '前端小智'], ['BigInt小结', '每天做个总结吧，坚持就是胜利！', 'https://juejin.cn/post/6970624570503987230', 'E1e']])), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_Tabs__WEBPACK_IMPORTED_MODULE_5__["Tabs"].Tab, {
+  }, "\n    " + __list([['BigInt了解一下', 'BigInt 是一种内置对象，它提供了一种方法来表示大于 2^53-1的整数。这原本是 Javascript 中可以用 Number 表示的最大数字。BigInt 可以表示任意大的整数。', 'https://juejin.cn/post/6901998336123863053', '前端AK君'], ['JS最新基本数据类型：BigInt', 'BigInt数据类型的目的是比Number数据类型支持的范围更大的整数值。在对大整数执行数学运算时，以任意精度表示整数的能力尤为重要。使用BigInt，整数溢出将不再是问题。', 'https://juejin.cn/post/6844903902295359502', '前端小智'], ['BigInt小结', '每天做个总结吧，坚持就是胜利！', 'https://juejin.cn/post/6970624570503987230', 'E1e']]) + "\n    <div class=\"more\"><a href=\"https://juejin.cn/search?query=BigInt\" target=\"_blank\">\u66F4\u591A\u5185\u5BB9\uD83D\uDCDA</a></div>\n  "), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_Tabs__WEBPACK_IMPORTED_MODULE_5__["Tabs"].Tab, {
     id: "2",
     title: "\u7EC3\u4E60\u9898\uD83D\uDCDD"
   }, __list([['BigInt练习', '我们在码上掘金上试试看。', 'https://code.juejin.cn']])), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_Tabs__WEBPACK_IMPORTED_MODULE_5__["Tabs"].Tab, {

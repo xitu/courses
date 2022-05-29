@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-basic-语法和类型-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-basic-基本语法和类型-mdx"],{
 
-/***/ "+AKW":
-/*!**********************************************!*\
-  !*** ../src/docs/javascript/basic/语法和类型.mdx ***!
-  \**********************************************/
+/***/ "NPky":
+/*!************************************************!*\
+  !*** ../src/docs/javascript/basic/基本语法和类型.mdx ***!
+  \************************************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,7 +38,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/javascript/basic/\u8BED\u6CD5\u548C\u7C7B\u578B.mdx"
+      filename: "src/docs/javascript/basic/\u57FA\u672C\u8BED\u6CD5\u548C\u7C7B\u578B.mdx"
     }
   });
 }
@@ -64,7 +64,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/javascript/basic/\u8BED\u6CD5\u548C\u7C7B\u578B.mdx"
+      filename: "src/docs/javascript/basic/\u57FA\u672C\u8BED\u6CD5\u548C\u7C7B\u578B.mdx"
     }
   });
 }

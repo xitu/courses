@@ -39,26 +39,41 @@ submenu: 二级目录
 
 ## 管理目录
 
-`Docz` 支持配置目录顺序，你可以编辑`doczrc.js`，修改目录配置，例如：
+`Docz` 支持配置目录顺序，你可以编辑`src/docs`下的`menurc.js`文件修改目录配置，这个文件的内容大致如下：
 
 ```js
+const JavaScript = require('./javascript/menurc');
+const HTML = require('./html/menurc');
+const CSS = require('./css/menurc');
+
+module.exports = [
+  HTML,
+  CSS,
+  JavaScript,
+];
+```
+
+你可以添加或修改`src/docs`对应的子目录中的`menurc.js`文件，并将它引入到`src/docs/menurc.js`，比如`src/docs/js`下的文件内容如下：
+
+```js
+module.exports = { 
+  name: 'JavaScript', 
   menu: [
-    { name: 'JavaScript', menu: [
-        '概览',
-        '浏览器中的JS',
-      ] 
-    },
-    {
-      name: 'HTML', menu: [
-        '概览',
-      ]
-    },
-    {
-      name: 'CSS', menu: [
-        '概览',
-      ]
-    },
-  ]
+    '概览',
+    // JS基础
+    '基本语法和类型',
+    '新类型：BigInt',
+    ...
+    // JS进阶
+    '概览-进阶',
+    ...
+    // JS高级
+    '概览-高级',
+    ...
+    // 运行环境 runtime
+    '浏览器中的JS',
+  ] 
+};
 ```
 
 如果不修改，默认会按照字符串顺序排列目录。

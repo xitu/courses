@@ -1,5 +1,5 @@
 ---
-name: 新类型：BitInt
+name: 新类型：BigInt
 route: /js/basic/bigint
 menu: JavaScript
 submenu: JS基础
@@ -11,8 +11,8 @@ x> This document is a Work in Progress.
 import {Tabs} from '@/Tabs';
 
 <Tabs activeId="1">
-  <Tabs.Tab id="1" title="参考资料📖">{
-    __list([
+  <Tabs.Tab id="1" title="参考资料📖">{`
+    ${__list([
       ['BigInt了解一下',
        'BigInt 是一种内置对象，它提供了一种方法来表示大于 2^53-1的整数。这原本是 Javascript 中可以用 Number 表示的最大数字。BigInt 可以表示任意大的整数。',
        'https://juejin.cn/post/6901998336123863053',
@@ -29,8 +29,9 @@ import {Tabs} from '@/Tabs';
         'https://juejin.cn/post/6970624570503987230',
         'E1e',
       ],
-    ])
-  }</Tabs.Tab>
+    ])}
+    <div class="more"><a href="https://juejin.cn/search?query=BigInt" target="_blank">更多内容📚</a></div>
+  `}</Tabs.Tab>
   <Tabs.Tab id="2" title="练习题📝">{
     __list([
       ['BigInt练习',

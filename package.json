@@ -6,6 +6,7 @@
   "repository": "https://github.com/xitu/courses",
   "scripts": {
     "start": "npm run docz:dev",
+    "build": "npm run docz:build",
     "docz:dev": "rm -rf .docz && docz dev --port=3000",
     "docz:build": "rm -rf .docz && docz build",
     "docz:serve": "rm -rf .docz && docz build && docz serve",

@@ -12,6 +12,14 @@ function fix(dest, src) {
   }
 }
 
+function loadMenu() {
+  try {
+    return require('./src/docs/menurc.js');
+  } catch(ex) {
+    return require('../src/docs/menurc.js');
+  }
+}
+
 const themePath = path.join(__dirname, 'node_modules/gatsby-theme-docz/gatsby-config.js');
 const fixThemeFile = path.join(__dirname, 'gatsby-config.fix.js');
 
@@ -40,21 +48,5 @@ export default {
   editBranch: 'main',
 
   /* 设置菜单顺序 */
-  menu: [
-    { name: 'JavaScript', menu: [
-        '概览',
-        '浏览器中的JS',
-      ] 
-    },
-    {
-      name: 'HTML', menu: [
-        '概览',
-      ]
-    },
-    {
-      name: 'CSS', menu: [
-        '概览',
-      ]
-    },
-  ]
+  menu: loadMenu(),
 }

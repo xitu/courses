@@ -113,10 +113,23 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "Docz"), " \u652F\u6301\u914D\u7F6E\u76EE\u5F55\u987A\u5E8F\uFF0C\u4F60\u53EF\u4EE5\u7F16\u8F91", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
-  }, "doczrc.js"), "\uFF0C\u4FEE\u6539\u76EE\u5F55\u914D\u7F6E\uFF0C\u4F8B\u5982\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+  }, "src/docs"), "\u4E0B\u7684", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, "menurc.js"), "\u6587\u4EF6\u4FEE\u6539\u76EE\u5F55\u914D\u7F6E\uFF0C\u8FD9\u4E2A\u6587\u4EF6\u7684\u5185\u5BB9\u5927\u81F4\u5982\u4E0B\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
     parentName: "pre",
     "className": "language-js"
-  }, "  menu: [\n    { name: 'JavaScript', menu: [\n        '\u6982\u89C8',\n        '\u6D4F\u89C8\u5668\u4E2D\u7684JS',\n      ] \n    },\n    {\n      name: 'HTML', menu: [\n        '\u6982\u89C8',\n      ]\n    },\n    {\n      name: 'CSS', menu: [\n        '\u6982\u89C8',\n      ]\n    },\n  ]\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5982\u679C\u4E0D\u4FEE\u6539\uFF0C\u9ED8\u8BA4\u4F1A\u6309\u7167\u5B57\u7B26\u4E32\u987A\u5E8F\u6392\u5217\u76EE\u5F55\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }, "const JavaScript = require('./javascript/menurc');\nconst HTML = require('./html/menurc');\nconst CSS = require('./css/menurc');\n\nmodule.exports = [\n  HTML,\n  CSS,\n  JavaScript,\n];\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u4F60\u53EF\u4EE5\u6DFB\u52A0\u6216\u4FEE\u6539", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, "src/docs"), "\u5BF9\u5E94\u7684\u5B50\u76EE\u5F55\u4E2D\u7684", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, "menurc.js"), "\u6587\u4EF6\uFF0C\u5E76\u5C06\u5B83\u5F15\u5165\u5230", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, "src/docs/menurc.js"), "\uFF0C\u6BD4\u5982", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, "src/docs/js"), "\u4E0B\u7684\u6587\u4EF6\u5185\u5BB9\u5982\u4E0B\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "module.exports = { \n  name: 'JavaScript', \n  menu: [\n    '\u6982\u89C8',\n    // JS\u57FA\u7840\n    '\u57FA\u672C\u8BED\u6CD5\u548C\u7C7B\u578B',\n    '\u65B0\u7C7B\u578B\uFF1ABigInt',\n    ...\n    // JS\u8FDB\u9636\n    '\u6982\u89C8-\u8FDB\u9636',\n    ...\n    // JS\u9AD8\u7EA7\n    '\u6982\u89C8-\u9AD8\u7EA7',\n    ...\n    // \u8FD0\u884C\u73AF\u5883 runtime\n    '\u6D4F\u89C8\u5668\u4E2D\u7684JS',\n  ] \n};\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5982\u679C\u4E0D\u4FEE\u6539\uFF0C\u9ED8\u8BA4\u4F1A\u6309\u7167\u5B57\u7B26\u4E32\u987A\u5E8F\u6392\u5217\u76EE\u5F55\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "components"
   }, "Components"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
