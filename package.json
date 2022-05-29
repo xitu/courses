@@ -19,8 +19,6 @@
   "devDependencies": {
     "@emotion/styled": "^10.3.0",
     "docz": "^2.4.0",
-    "http-server": "^14.1.0",
-    "katex": "^0.15.6",
     "mermaid": "^9.1.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

@@ -58,7 +58,7 @@ export const NavGroup = ({ item, sidebarRef, nested }) => {
         {menus &&
           subheadingsVisible &&
           menus.map(menu => {
-            if (!menu.route) {
+            if (!menu.route && menu.menu) {
               // setShowsubheadings(true)
               return <NavGroup key={menu.id} item={menu} sidebarRef={sidebarRef} nested={true}/>
             }

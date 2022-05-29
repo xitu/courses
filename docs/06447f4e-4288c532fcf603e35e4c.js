@@ -286,137 +286,7 @@
        * This is a module for storing settings passed into KaTeX. It correctly handles
        * default settings.
        */
-      // TODO: automatically generate documentation
-      // TODO: check all properties on Settings exist
-      // TODO: check the type of a property on Settings matches
 
-      var SETTINGS_SCHEMA = {
-        displayMode: {
-          type: "boolean",
-          description: "Render math in display mode, which puts the math in " + "display style (so \\int and \\sum are large, for example), and " + "centers the math on the page on its own line.",
-          cli: "-d, --display-mode"
-        },
-        output: {
-          type: {
-            enum: ["htmlAndMathml", "html", "mathml"]
-          },
-          description: "Determines the markup language of the output.",
-          cli: "-F, --format <type>"
-        },
-        leqno: {
-          type: "boolean",
-          description: "Render display math in leqno style (left-justified tags)."
-        },
-        fleqn: {
-          type: "boolean",
-          description: "Render display math flush left."
-        },
-        throwOnError: {
-          type: "boolean",
-          default: true,
-          cli: "-t, --no-throw-on-error",
-          cliDescription: "Render errors (in the color given by --error-color) ins" + "tead of throwing a ParseError exception when encountering an error."
-        },
-        errorColor: {
-          type: "string",
-          default: "#cc0000",
-          cli: "-c, --error-color <color>",
-          cliDescription: "A color string given in the format 'rgb' or 'rrggbb' " + "(no #). This option determines the color of errors rendered by the " + "-t option.",
-          cliProcessor: function cliProcessor(color) {
-            return "#" + color;
-          }
-        },
-        macros: {
-          type: "object",
-          cli: "-m, --macro <def>",
-          cliDescription: "Define custom macro of the form '\\foo:expansion' (use " + "multiple -m arguments for multiple macros).",
-          cliDefault: [],
-          cliProcessor: function cliProcessor(def, defs) {
-            defs.push(def);
-            return defs;
-          }
-        },
-        minRuleThickness: {
-          type: "number",
-          description: "Specifies a minimum thickness, in ems, for fraction lines," + " `\\sqrt` top lines, `{array}` vertical lines, `\\hline`, " + "`\\hdashline`, `\\underline`, `\\overline`, and the borders of " + "`\\fbox`, `\\boxed`, and `\\fcolorbox`.",
-          processor: function processor(t) {
-            return Math.max(0, t);
-          },
-          cli: "--min-rule-thickness <size>",
-          cliProcessor: parseFloat
-        },
-        colorIsTextColor: {
-          type: "boolean",
-          description: "Makes \\color behave like LaTeX's 2-argument \\textcolor, " + "instead of LaTeX's one-argument \\color mode change.",
-          cli: "-b, --color-is-text-color"
-        },
-        strict: {
-          type: [{
-            enum: ["warn", "ignore", "error"]
-          }, "boolean", "function"],
-          description: "Turn on strict / LaTeX faithfulness mode, which throws an " + "error if the input uses features that are not supported by LaTeX.",
-          cli: "-S, --strict",
-          cliDefault: false
-        },
-        trust: {
-          type: ["boolean", "function"],
-          description: "Trust the input, enabling all HTML features such as \\url.",
-          cli: "-T, --trust"
-        },
-        maxSize: {
-          type: "number",
-          default: Infinity,
-          description: "If non-zero, all user-specified sizes, e.g. in " + "\\rule{500em}{500em}, will be capped to maxSize ems. Otherwise, " + "elements and spaces can be arbitrarily large",
-          processor: function processor(s) {
-            return Math.max(0, s);
-          },
-          cli: "-s, --max-size <n>",
-          cliProcessor: parseInt
-        },
-        maxExpand: {
-          type: "number",
-          default: 1000,
-          description: "Limit the number of macro expansions to the specified " + "number, to prevent e.g. infinite macro loops. If set to Infinity, " + "the macro expander will try to fully expand as in LaTeX.",
-          processor: function processor(n) {
-            return Math.max(0, n);
-          },
-          cli: "-e, --max-expand <n>",
-          cliProcessor: function cliProcessor(n) {
-            return n === "Infinity" ? Infinity : parseInt(n);
-          }
-        },
-        globalGroup: {
-          type: "boolean",
-          cli: false
-        }
-      };
-
-      function getDefaultValue(schema) {
-        if (schema.default) {
-          return schema.default;
-        }
-
-        var type = schema.type;
-        var defaultType = Array.isArray(type) ? type[0] : type;
-
-        if (typeof defaultType !== 'string') {
-          return defaultType.enum[0];
-        }
-
-        switch (defaultType) {
-          case 'boolean':
-            return false;
-
-          case 'string':
-            return '';
-
-          case 'number':
-            return 0;
-
-          case 'object':
-            return {};
-        }
-      }
       /**
        * The main Settings object
        *
@@ -427,7 +297,6 @@
        *                 math (true), meaning that the math starts in \displaystyle
        *                 and is placed in a block with vertical margin.
        */
-
 
       var Settings = /*#__PURE__*/function () {
         function Settings(options) {
@@ -447,16 +316,20 @@
           this.globalGroup = void 0; // allow null options
 
           options = options || {};
-
-          for (var prop in SETTINGS_SCHEMA) {
-            if (SETTINGS_SCHEMA.hasOwnProperty(prop)) {
-              // $FlowFixMe
-              var schema = SETTINGS_SCHEMA[prop]; // TODO: validate options
-              // $FlowFixMe
-
-              this[prop] = options[prop] !== undefined ? schema.processor ? schema.processor(options[prop]) : options[prop] : getDefaultValue(schema);
-            }
-          }
+          this.displayMode = utils.deflt(options.displayMode, false);
+          this.output = utils.deflt(options.output, "htmlAndMathml");
+          this.leqno = utils.deflt(options.leqno, false);
+          this.fleqn = utils.deflt(options.fleqn, false);
+          this.throwOnError = utils.deflt(options.throwOnError, true);
+          this.errorColor = utils.deflt(options.errorColor, "#cc0000");
+          this.macros = options.macros || {};
+          this.minRuleThickness = Math.max(0, utils.deflt(options.minRuleThickness, 0));
+          this.colorIsTextColor = utils.deflt(options.colorIsTextColor, false);
+          this.strict = utils.deflt(options.strict, "warn");
+          this.trust = utils.deflt(options.trust, false);
+          this.maxSize = Math.max(0, utils.deflt(options.maxSize, Infinity));
+          this.maxExpand = Math.max(0, utils.deflt(options.maxExpand, 1000));
+          this.globalGroup = utils.deflt(options.globalGroup, false);
         }
         /**
          * Report nonstrict (non-LaTeX-compatible) input.
@@ -4600,7 +4473,7 @@
       defineSymbol(math, main, bin, "\u2217", "\\ast");
       defineSymbol(math, main, bin, "\u2294", "\\sqcup", true);
       defineSymbol(math, main, bin, "\u25EF", "\\bigcirc", true);
-      defineSymbol(math, main, bin, "\u2219", "\\bullet", true);
+      defineSymbol(math, main, bin, "\u2219", "\\bullet");
       defineSymbol(math, main, bin, "\u2021", "\\ddagger");
       defineSymbol(math, main, bin, "\u2240", "\\wr", true);
       defineSymbol(math, main, bin, "\u2A3F", "\\amalg");
@@ -4959,13 +4832,13 @@
       defineSymbol(math, main, bin, "+", "+");
       defineSymbol(math, main, bin, "\u2212", "-", true);
       defineSymbol(math, main, bin, "\u22C5", "\\cdot", true);
-      defineSymbol(math, main, bin, "\u2218", "\\circ", true);
+      defineSymbol(math, main, bin, "\u2218", "\\circ");
       defineSymbol(math, main, bin, "\xF7", "\\div", true);
       defineSymbol(math, main, bin, "\xB1", "\\pm", true);
       defineSymbol(math, main, bin, "\xD7", "\\times", true);
       defineSymbol(math, main, bin, "\u2229", "\\cap", true);
       defineSymbol(math, main, bin, "\u222A", "\\cup", true);
-      defineSymbol(math, main, bin, "\u2216", "\\setminus", true);
+      defineSymbol(math, main, bin, "\u2216", "\\setminus");
       defineSymbol(math, main, bin, "\u2227", "\\land");
       defineSymbol(math, main, bin, "\u2228", "\\lor");
       defineSymbol(math, main, bin, "\u2227", "\\wedge", true);
@@ -10153,113 +10026,6 @@
         }
       }
 
-      ; // CONCATENATED MODULE: ./src/defineMacro.js
-
-      /**
-       * All registered global/built-in macros.
-       * `macros.js` exports this same dictionary again and makes it public.
-       * `Parser.js` requires this dictionary via `macros.js`.
-       */
-
-      var _macros = {}; // This function might one day accept an additional argument and do more things.
-
-      function defineMacro(name, body) {
-        _macros[name] = body;
-      }
-
-      ; // CONCATENATED MODULE: ./src/SourceLocation.js
-
-      /**
-       * Lexing or parsing positional information for error reporting.
-       * This object is immutable.
-       */
-
-      var SourceLocation = /*#__PURE__*/function () {
-        // The + prefix indicates that these fields aren't writeable
-        // Lexer holding the input string.
-        // Start offset, zero-based inclusive.
-        // End offset, zero-based exclusive.
-        function SourceLocation(lexer, start, end) {
-          this.lexer = void 0;
-          this.start = void 0;
-          this.end = void 0;
-          this.lexer = lexer;
-          this.start = start;
-          this.end = end;
-        }
-        /**
-         * Merges two `SourceLocation`s from location providers, given they are
-         * provided in order of appearance.
-         * - Returns the first one's location if only the first is provided.
-         * - Returns a merged range of the first and the last if both are provided
-         *   and their lexers match.
-         * - Otherwise, returns null.
-         */
-
-
-        SourceLocation.range = function range(first, second) {
-          if (!second) {
-            return first && first.loc;
-          } else if (!first || !first.loc || !second.loc || first.loc.lexer !== second.loc.lexer) {
-            return null;
-          } else {
-            return new SourceLocation(first.loc.lexer, first.loc.start, second.loc.end);
-          }
-        };
-
-        return SourceLocation;
-      }();
-
-      ; // CONCATENATED MODULE: ./src/Token.js
-
-      /**
-       * Interface required to break circular dependency between Token, Lexer, and
-       * ParseError.
-       */
-
-      /**
-       * The resulting token returned from `lex`.
-       *
-       * It consists of the token text plus some position information.
-       * The position information is essentially a range in an input string,
-       * but instead of referencing the bare input string, we refer to the lexer.
-       * That way it is possible to attach extra metadata to the input string,
-       * like for example a file name or similar.
-       *
-       * The position information is optional, so it is OK to construct synthetic
-       * tokens if appropriate. Not providing available position information may
-       * lead to degraded error reporting, though.
-       */
-
-      var Token = /*#__PURE__*/function () {
-        // don't expand the token
-        // used in \noexpand
-        function Token(text, // the text of this token
-        loc) {
-          this.text = void 0;
-          this.loc = void 0;
-          this.noexpand = void 0;
-          this.treatAsRelax = void 0;
-          this.text = text;
-          this.loc = loc;
-        }
-        /**
-         * Given a pair of tokens (this and endToken), compute a `Token` encompassing
-         * the whole input range enclosed by these two.
-         */
-
-
-        var _proto = Token.prototype;
-
-        _proto.range = function range(endToken, // last token of the range, inclusive
-        text // the text of the newly constructed token
-        ) {
-          return new Token(text, SourceLocation.range(this, endToken));
-        };
-
-        return Token;
-      }();
-
       ; // CONCATENATED MODULE: ./src/environments/array.js
       // Helper functions
 
@@ -10286,19 +10052,7 @@
         if (!settings.displayMode) {
           throw new src_ParseError("{" + context.envName + "} can be used only in" + " display mode.");
         }
-      }; // autoTag (an argument to parseArray) can be one of three values:
-      // * undefined: Regular (not-top-level) array; no tags on each row
-      // * true: Automatic equation numbering, overridable by \tag
-      // * false: Tags allowed on each row, but no automatic numbering
-      // This function *doesn't* work with the "split" environment name.
-
-
-      function getAutoTag(name) {
-        if (name.indexOf("ed") === -1) {
-          return name.indexOf("*") === -1;
-        } // return undefined;
-
-      }
+      };
       /**
        * Parse the body of the environment, with rows delimited by \\ and
        * columns delimited by &, and create a nested list in row-major order
@@ -10313,7 +10067,7 @@
             cols = _ref.cols,
             arraystretch = _ref.arraystretch,
             colSeparationType = _ref.colSeparationType,
-            autoTag = _ref.autoTag,
+            addEqnNum = _ref.addEqnNum,
             singleRow = _ref.singleRow,
             emptySingleRow = _ref.emptySingleRow,
             maxNumCols = _ref.maxNumCols,
@@ -10347,29 +10101,7 @@
         var row = [];
         var body = [row];
         var rowGaps = [];
-        var hLinesBeforeRow = [];
-        var tags = autoTag != null ? [] : undefined; // amsmath uses \global\@eqnswtrue and \global\@eqnswfalse to represent
-        // whether this row should have an equation number.  Simulate this with
-        // a \@eqnsw macro set to 1 or 0.
-
-        function beginRow() {
-          if (autoTag) {
-            parser.gullet.macros.set("\\@eqnsw", "1", true);
-          }
-        }
-
-        function endRow() {
-          if (tags) {
-            if (parser.gullet.macros.get("\\df@tag")) {
-              tags.push(parser.subparse([new Token("\\df@tag")]));
-              parser.gullet.macros.set("\\df@tag", undefined, true);
-            } else {
-              tags.push(Boolean(autoTag) && parser.gullet.macros.get("\\@eqnsw") === "1");
-            }
-          }
-        }
-
-        beginRow(); // Test for \hline at the top of the array.
+        var hLinesBeforeRow = []; // Test for \hline at the top of the array.
 
         hLinesBeforeRow.push(getHLines(parser));
 
@@ -10410,11 +10142,10 @@
 
             parser.consume();
           } else if (next === "\\end") {
-            endRow(); // Arrays terminate newlines with `\crcr` which consumes a `\cr` if
+            // Arrays terminate newlines with `\crcr` which consumes a `\cr` if
             // the last line is empty.  However, AMS environments keep the
             // empty row if it's the only one.
             // NOTE: Currently, `cell` is the last item added into `row`.
-
             if (row.length === 1 && cell.type === "styling" && cell.body[0].body.length === 0 && (body.length > 1 || !emptySingleRow)) {
               body.pop();
             }
@@ -10436,13 +10167,11 @@
               size = parser.parseSizeGroup(true);
             }
 
-            rowGaps.push(size ? size.value : null);
-            endRow(); // check for \hline(s) following the row separator
+            rowGaps.push(size ? size.value : null); // check for \hline(s) following the row separator
 
             hLinesBeforeRow.push(getHLines(parser));
             row = [];
             body.push(row);
-            beginRow();
           } else {
             throw new src_ParseError("Expected & or \\\\ or \\cr or \\end", parser.nextToken);
           }
@@ -10463,7 +10192,7 @@
           hskipBeforeAndAfter: hskipBeforeAndAfter,
           hLinesBeforeRow: hLinesBeforeRow,
           colSeparationType: colSeparationType,
-          tags: tags,
+          addEqnNum: addEqnNum,
           leqno: leqno
         };
       } // Decides on a style for cells in an array according to whether the given
@@ -10601,35 +10330,20 @@
         var cols = [];
         var colSep;
         var colDescrNum;
-        var tagSpans = [];
+        var eqnNumSpans = [];
 
-        if (group.tags && group.tags.some(function (tag) {
-          return tag;
-        })) {
-          // An environment with manual tags and/or automatic equation numbers.
-          // Create node(s), the latter of which trigger CSS counter increment.
+        if (group.addEqnNum) {
+          // An environment with automatic equation numbers.
+          // Create node(s) that will trigger CSS counter increment.
           for (r = 0; r < nr; ++r) {
             var rw = body[r];
             var shift = rw.pos - offset;
-            var tag = group.tags[r];
-            var tagSpan = void 0;
-
-            if (tag === true) {
-              // automatic numbering
-              tagSpan = buildCommon.makeSpan(["eqn-num"], [], options);
-            } else if (tag === false) {
-              // \nonumber/\notag or starred environment
-              tagSpan = buildCommon.makeSpan([], [], options);
-            } else {
-              // manual \tag
-              tagSpan = buildCommon.makeSpan([], buildExpression(tag, options, true), options);
-            }
-
-            tagSpan.depth = rw.depth;
-            tagSpan.height = rw.height;
-            tagSpans.push({
+            var eqnTag = buildCommon.makeSpan(["eqn-num"], [], options);
+            eqnTag.depth = rw.depth;
+            eqnTag.height = rw.height;
+            eqnNumSpans.push({
               type: "elem",
-              elem: tagSpan,
+              elem: eqnTag,
               shift: shift
             });
           }
@@ -10765,12 +10479,12 @@
           }, options);
         }
 
-        if (tagSpans.length === 0) {
+        if (!group.addEqnNum) {
           return buildCommon.makeSpan(["mord"], [body], options);
         } else {
           var eqnNumCol = buildCommon.makeVList({
             positionType: "individualShift",
-            children: tagSpans
+            children: eqnNumSpans
           }, options);
           eqnNumCol = buildCommon.makeSpan(["tag"], [eqnNumCol], options);
           return buildCommon.makeFragment([body, eqnNumCol]);
@@ -10796,7 +10510,7 @@
             row.push(new mathMLTree.MathNode("mtd", [buildMathML_buildGroup(rw[j], options)]));
           }
 
-          if (group.tags && group.tags[i]) {
+          if (group.addEqnNum) {
             row.unshift(glue);
             row.push(glue);
 
@@ -10931,14 +10645,13 @@
 
         var cols = [];
         var separationType = context.envName.indexOf("at") > -1 ? "alignat" : "align";
-        var isSplit = context.envName === "split";
         var res = parseArray(context.parser, {
           cols: cols,
           addJot: true,
-          autoTag: isSplit ? undefined : getAutoTag(context.envName),
+          addEqnNum: context.envName === "align" || context.envName === "alignat",
           emptySingleRow: true,
           colSeparationType: separationType,
-          maxNumCols: isSplit ? 2 : undefined,
+          maxNumCols: context.envName === "split" ? 2 : undefined,
           leqno: context.parser.settings.leqno
         }, "display"); // Determining number of columns.
         // 1. If the first argument is given, we use it as a number of columns,
@@ -11289,7 +11002,7 @@
             }],
             addJot: true,
             colSeparationType: "gather",
-            autoTag: getAutoTag(context.envName),
+            addEqnNum: context.envName === "gather",
             emptySingleRow: true,
             leqno: context.parser.settings.leqno
           };
@@ -11320,7 +11033,7 @@
         handler: function handler(context) {
           validateAmsEnvironmentContext(context);
           var res = {
-            autoTag: getAutoTag(context.envName),
+            addEqnNum: context.envName === "equation",
             emptySingleRow: true,
             singleRow: true,
             maxNumCols: 1,
@@ -11343,9 +11056,7 @@
         },
         htmlBuilder: array_htmlBuilder,
         mathmlBuilder: array_mathmlBuilder
-      });
-      defineMacro("\\nonumber", "\\gdef\\@eqnsw{0}");
-      defineMacro("\\notag", "\\nonumber"); // Catch \hline outside array environment
+      }); // Catch \hline outside array environment
 
       defineFunction({
         type: "text",
@@ -11447,7 +11158,7 @@
         var inner = buildMathML_buildExpression(group.body, options);
 
         if (group.mclass === "minner") {
-          node = new mathMLTree.MathNode("mpadded", inner);
+          return mathMLTree.newDocumentFragment(inner);
         } else if (group.mclass === "mord") {
           if (group.isCharacterBox) {
             node = inner[0];
@@ -11475,10 +11186,6 @@
           } else if (group.mclass === "mopen" || group.mclass === "mclose") {
             node.attributes.lspace = "0em";
             node.attributes.rspace = "0em";
-          } else if (group.mclass === "minner") {
-            node.attributes.lspace = "0.0556em"; // 1 mu is the most likely option
-
-            node.attributes.width = "+0.1111em";
           } // MathML <mo> default space is 5/18 em, so <mrel> needs no action.
           // Ref: https://developer.mozilla.org/en-US/docs/Web/MathML/Element/mo
 
@@ -13404,6 +13111,20 @@
         htmlBuilder: op_htmlBuilder,
         mathmlBuilder: op_mathmlBuilder
       });
+      ; // CONCATENATED MODULE: ./src/defineMacro.js
+
+      /**
+       * All registered global/built-in macros.
+       * `macros.js` exports this same dictionary again and makes it public.
+       * `Parser.js` requires this dictionary via `macros.js`.
+       */
+
+      var _macros = {}; // This function might one day accept an additional argument and do more things.
+
+      function defineMacro(name, body) {
+        _macros[name] = body;
+      }
+
       ; // CONCATENATED MODULE: ./src/functions/operatorname.js
       // NOTE: Unlike most `htmlBuilder`s, this one handles not only
       // "operatorname", but also  "supsub" since \operatorname* can
@@ -13768,23 +13489,6 @@
           var dy = group.dy.number + group.dy.unit;
           node.setAttribute("voffset", dy);
           return node;
-        }
-      });
-      ; // CONCATENATED MODULE: ./src/functions/relax.js
-
-      defineFunction({
-        type: "internal",
-        names: ["\\relax"],
-        props: {
-          numArgs: 0,
-          allowedInText: true
-        },
-        handler: function handler(_ref) {
-          var parser = _ref.parser;
-          return {
-            type: "internal",
-            mode: parser.mode
-          };
         }
       });
       ; // CONCATENATED MODULE: ./src/functions/rule.js
@@ -14830,6 +14534,99 @@
       var src_functions = functions; // TODO(kevinb): have functions return an object and call defineFunction with
       // that object in this file instead of relying on side-effects.
 
+      ; // CONCATENATED MODULE: ./src/SourceLocation.js
+
+      /**
+       * Lexing or parsing positional information for error reporting.
+       * This object is immutable.
+       */
+
+      var SourceLocation = /*#__PURE__*/function () {
+        // The + prefix indicates that these fields aren't writeable
+        // Lexer holding the input string.
+        // Start offset, zero-based inclusive.
+        // End offset, zero-based exclusive.
+        function SourceLocation(lexer, start, end) {
+          this.lexer = void 0;
+          this.start = void 0;
+          this.end = void 0;
+          this.lexer = lexer;
+          this.start = start;
+          this.end = end;
+        }
+        /**
+         * Merges two `SourceLocation`s from location providers, given they are
+         * provided in order of appearance.
+         * - Returns the first one's location if only the first is provided.
+         * - Returns a merged range of the first and the last if both are provided
+         *   and their lexers match.
+         * - Otherwise, returns null.
+         */
+
+
+        SourceLocation.range = function range(first, second) {
+          if (!second) {
+            return first && first.loc;
+          } else if (!first || !first.loc || !second.loc || first.loc.lexer !== second.loc.lexer) {
+            return null;
+          } else {
+            return new SourceLocation(first.loc.lexer, first.loc.start, second.loc.end);
+          }
+        };
+
+        return SourceLocation;
+      }();
+
+      ; // CONCATENATED MODULE: ./src/Token.js
+
+      /**
+       * Interface required to break circular dependency between Token, Lexer, and
+       * ParseError.
+       */
+
+      /**
+       * The resulting token returned from `lex`.
+       *
+       * It consists of the token text plus some position information.
+       * The position information is essentially a range in an input string,
+       * but instead of referencing the bare input string, we refer to the lexer.
+       * That way it is possible to attach extra metadata to the input string,
+       * like for example a file name or similar.
+       *
+       * The position information is optional, so it is OK to construct synthetic
+       * tokens if appropriate. Not providing available position information may
+       * lead to degraded error reporting, though.
+       */
+
+      var Token = /*#__PURE__*/function () {
+        // don't expand the token
+        // used in \noexpand
+        function Token(text, // the text of this token
+        loc) {
+          this.text = void 0;
+          this.loc = void 0;
+          this.noexpand = void 0;
+          this.treatAsRelax = void 0;
+          this.text = text;
+          this.loc = loc;
+        }
+        /**
+         * Given a pair of tokens (this and endToken), compute a `Token` encompassing
+         * the whole input range enclosed by these two.
+         */
+
+
+        var _proto = Token.prototype;
+
+        _proto.range = function range(endToken, // last token of the range, inclusive
+        text // the text of the newly constructed token
+        ) {
+          return new Token(text, SourceLocation.range(this, endToken));
+        };
+
+        return Token;
+      }();
+
       ; // CONCATENATED MODULE: ./src/Lexer.js
 
       /**
@@ -15013,7 +14810,7 @@
 
           for (var undef in undefs) {
             if (undefs.hasOwnProperty(undef)) {
-              if (undefs[undef] == null) {
+              if (undefs[undef] === undefined) {
                 delete this.current[undef];
               } else {
                 this.current[undef] = undefs[undef];
@@ -15063,7 +14860,6 @@
          * Local set() sets the current value and (when appropriate) adds an undo
          * operation to the undo stack.  Global set() may change the undo
          * operation at every level, so takes time linear in their number.
-         * A value of undefined means to delete existing definitions.
          */
         ;
 
@@ -15095,11 +14891,7 @@
             }
           }
 
-          if (value == null) {
-            delete this.current[name];
-          } else {
-            this.current[name] = value;
-          }
+          this.current[name] = value;
         };
 
         return Namespace;
@@ -15493,7 +15285,7 @@
       defineMacro("\\substack", "\\begin{subarray}{c}#1\\end{subarray}"); // \renewcommand{\colon}{\nobreak\mskip2mu\mathpunct{}\nonscript
       // \mkern-\thinmuskip{:}\mskip6muplus1mu\relax}
 
-      defineMacro("\\colon", "\\nobreak\\mskip2mu\\mathpunct{}" + "\\mathchoice{\\mkern-3mu}{\\mkern-3mu}{}{}{:}\\mskip6mu\\relax"); // \newcommand{\boxed}[1]{\fbox{\m@th$\displaystyle#1$}}
+      defineMacro("\\colon", "\\nobreak\\mskip2mu\\mathpunct{}" + "\\mathchoice{\\mkern-3mu}{\\mkern-3mu}{}{}{:}\\mskip6mu"); // \newcommand{\boxed}[1]{\fbox{\m@th$\displaystyle#1$}}
 
       defineMacro("\\boxed", "\\fbox{$\\displaystyle{#1}$}"); // \def\iff{\DOTSB\;\Longleftrightarrow\;}
       // \def\implies{\DOTSB\;\Longrightarrow\;}
@@ -15951,70 +15743,7 @@
       defineMacro("\\ket", "\\mathinner{|{#1}\\rangle}");
       defineMacro("\\braket", "\\mathinner{\\langle{#1}\\rangle}");
       defineMacro("\\Bra", "\\left\\langle#1\\right|");
-      defineMacro("\\Ket", "\\left|#1\\right\\rangle");
-
-      var braketHelper = function braketHelper(one) {
-        return function (context) {
-          var left = context.consumeArg().tokens;
-          var middle = context.consumeArg().tokens;
-          var middleDouble = context.consumeArg().tokens;
-          var right = context.consumeArg().tokens;
-          var oldMiddle = context.macros.get("|");
-          var oldMiddleDouble = context.macros.get("\\|");
-          context.macros.beginGroup();
-
-          var midMacro = function midMacro(double) {
-            return function (context) {
-              if (one) {
-                // Only modify the first instance of | or \|
-                context.macros.set("|", oldMiddle);
-
-                if (middleDouble.length) {
-                  context.macros.set("\\|", oldMiddleDouble);
-                }
-              }
-
-              var doubled = double;
-
-              if (!double && middleDouble.length) {
-                // Mimic \@ifnextchar
-                var nextToken = context.future();
-
-                if (nextToken.text === "|") {
-                  context.popToken();
-                  doubled = true;
-                }
-              }
-
-              return {
-                tokens: doubled ? middleDouble : middle,
-                numArgs: 0
-              };
-            };
-          };
-
-          context.macros.set("|", midMacro(false));
-
-          if (middleDouble.length) {
-            context.macros.set("\\|", midMacro(true));
-          }
-
-          var arg = context.consumeArg().tokens;
-          var expanded = context.expandTokens([].concat(right, arg, left));
-          context.macros.endGroup();
-          return {
-            tokens: expanded.reverse(),
-            numArgs: 0
-          };
-        };
-      };
-
-      defineMacro("\\bra@ket", braketHelper(false));
-      defineMacro("\\bra@set", braketHelper(true));
-      defineMacro("\\Braket", "\\bra@ket{\\left\\langle}" + "{\\,\\middle\\vert\\,}{\\,\\middle\\vert\\,}{\\right\\rangle}");
-      defineMacro("\\Set", "\\bra@set{\\left\\{\\:}" + "{\\;\\middle\\vert\\;}{\\;\\middle\\Vert\\;}{\\:\\right\\}}");
-      defineMacro("\\set", "\\bra@set{\\{\\,}{\\mid}{}{\\,\\}}"); // has no support for special || or \|
-      //////////////////////////////////////////////////////////////////////
+      defineMacro("\\Ket", "\\left|#1\\right\\rangle"); //////////////////////////////////////////////////////////////////////
       // actuarialangle.dtx
 
       defineMacro("\\angln", "{\\angl n}"); // Custom Khan Academy colors, should be moved to an optional package
@@ -16085,6 +15814,8 @@
       // function, or symbol.  Used in `isDefined`.
 
       var implicitCommands = {
+        "\\relax": true,
+        // MacroExpander.js
         "^": true,
         // Parser.js
         "_": true,
@@ -16455,13 +16186,15 @@
             var expanded = this.expandOnce(); // expandOnce returns Token if and only if it's fully expanded.
 
             if (expanded instanceof Token) {
+              // \relax stops the expansion, but shouldn't get returned (a
+              // null return value couldn't get implemented as a function).
               // the token after \noexpand is interpreted as if its meaning
               // were ‘\relax’
-              if (expanded.treatAsRelax) {
-                expanded.text = "\\relax";
+              if (expanded.text === "\\relax" || expanded.treatAsRelax) {
+                this.stack.pop();
+              } else {
+                return this.stack.pop(); // === expanded
               }
-
-              return this.stack.pop(); // === expanded
             }
           } // Flow unable to figure out that this pathway is impossible.
           // https://github.com/facebook/flow/issues/4808
@@ -16479,9 +16212,7 @@
           return this.macros.has(name) ? this.expandTokens([new Token(name)]) : undefined;
         }
         /**
-         * Fully expand the given token stream and return the resulting list of
-         * tokens.  Note that the input tokens are in reverse order, but the
-         * output tokens are in forward order.
+         * Fully expand the given token stream and return the resulting list of tokens
          */
         ;
 
@@ -16605,114 +16336,6 @@
         return MacroExpander;
       }();
 
-      ; // CONCATENATED MODULE: ./src/unicodeSupOrSub.js
-      // Helpers for Parser.js handling of Unicode (sub|super)script characters.
-
-      var unicodeSubRegEx = /^[₊₋₌₍₎₀₁₂₃₄₅₆₇₈₉ₐₑₕᵢⱼₖₗₘₙₒₚᵣₛₜᵤᵥₓᵦᵧᵨᵩᵪ]/;
-      var uSubsAndSups = Object.freeze({
-        '₊': '+',
-        '₋': '-',
-        '₌': '=',
-        '₍': '(',
-        '₎': ')',
-        '₀': '0',
-        '₁': '1',
-        '₂': '2',
-        '₃': '3',
-        '₄': '4',
-        '₅': '5',
-        '₆': '6',
-        '₇': '7',
-        '₈': '8',
-        '₉': '9',
-        "\u2090": 'a',
-        "\u2091": 'e',
-        "\u2095": 'h',
-        "\u1D62": 'i',
-        "\u2C7C": 'j',
-        "\u2096": 'k',
-        "\u2097": 'l',
-        "\u2098": 'm',
-        "\u2099": 'n',
-        "\u2092": 'o',
-        "\u209A": 'p',
-        "\u1D63": 'r',
-        "\u209B": 's',
-        "\u209C": 't',
-        "\u1D64": 'u',
-        "\u1D65": 'v',
-        "\u2093": 'x',
-        "\u1D66": 'β',
-        "\u1D67": 'γ',
-        "\u1D68": 'ρ',
-        "\u1D69": "\u03D5",
-        "\u1D6A": 'χ',
-        '⁺': '+',
-        '⁻': '-',
-        '⁼': '=',
-        '⁽': '(',
-        '⁾': ')',
-        '⁰': '0',
-        '¹': '1',
-        '²': '2',
-        '³': '3',
-        '⁴': '4',
-        '⁵': '5',
-        '⁶': '6',
-        '⁷': '7',
-        '⁸': '8',
-        '⁹': '9',
-        "\u1D2C": 'A',
-        "\u1D2E": 'B',
-        "\u1D30": 'D',
-        "\u1D31": 'E',
-        "\u1D33": 'G',
-        "\u1D34": 'H',
-        "\u1D35": 'I',
-        "\u1D36": 'J',
-        "\u1D37": 'K',
-        "\u1D38": 'L',
-        "\u1D39": 'M',
-        "\u1D3A": 'N',
-        "\u1D3C": 'O',
-        "\u1D3E": 'P',
-        "\u1D3F": 'R',
-        "\u1D40": 'T',
-        "\u1D41": 'U',
-        "\u2C7D": 'V',
-        "\u1D42": 'W',
-        "\u1D43": 'a',
-        "\u1D47": 'b',
-        "\u1D9C": 'c',
-        "\u1D48": 'd',
-        "\u1D49": 'e',
-        "\u1DA0": 'f',
-        "\u1D4D": 'g',
-        "\u02B0": 'h',
-        "\u2071": 'i',
-        "\u02B2": 'j',
-        "\u1D4F": 'k',
-        "\u02E1": 'l',
-        "\u1D50": 'm',
-        "\u207F": 'n',
-        "\u1D52": 'o',
-        "\u1D56": 'p',
-        "\u02B3": 'r',
-        "\u02E2": 's',
-        "\u1D57": 't',
-        "\u1D58": 'u',
-        "\u1D5B": 'v',
-        "\u02B7": 'w',
-        "\u02E3": 'x',
-        "\u02B8": 'y',
-        "\u1DBB": 'z',
-        "\u1D5D": 'β',
-        "\u1D5E": 'γ',
-        "\u1D5F": 'δ',
-        "\u1D60": "\u03D5",
-        "\u1D61": 'χ',
-        "\u1DBF": 'θ'
-      });
       ; // CONCATENATED MODULE: ./src/Parser.js
 
       /* eslint no-constant-condition:0 */
@@ -17244,25 +16867,6 @@
           } finally {
             this.gullet.endGroups();
           }
-        }
-        /**
-         * Fully parse a separate sequence of tokens as a separate job.
-         * Tokens should be specified in reverse order, as in a MacroDefinition.
-         */
-        ;
-
-        _proto.subparse = function subparse(tokens) {
-          // Save the next token from the current job.
-          var oldToken = this.nextToken;
-          this.consume(); // Run the new job, terminating it with an excess '}'
-
-          this.gullet.pushToken(new Token("}"));
-          this.gullet.pushTokens(tokens);
-          var parse = this.parseExpression(false);
-          this.expect("}"); // Restore the next token from the current job.
-
-          this.nextToken = oldToken;
-          return parse;
         };
         /**
          * Parses an "expression", which is a list of atoms.
@@ -17517,46 +17121,6 @@
                 mode: this.mode,
                 body: primes
               };
-            } else if (uSubsAndSups[lex.text]) {
-              // A Unicode subscript or superscript character.
-              // We treat these similarly to the unicode-math package.
-              // So we render a string of Unicode (sub|super)scripts the
-              // same as a (sub|super)script of regular characters.
-              var str = uSubsAndSups[lex.text];
-              var isSub = unicodeSubRegEx.test(lex.text);
-              this.consume(); // Continue fetching tokens to fill out the string.
-
-              while (true) {
-                var token = this.fetch().text;
-
-                if (!uSubsAndSups[token]) {
-                  break;
-                }
-
-                if (unicodeSubRegEx.test(token) !== isSub) {
-                  break;
-                }
-
-                this.consume();
-                str += uSubsAndSups[token];
-              } // Now create a (sub|super)script.
-
-
-              var body = new Parser(str, this.settings).parse();
-
-              if (isSub) {
-                subscript = {
-                  type: "ordgroup",
-                  mode: "math",
-                  body: body
-                };
-              } else {
-                superscript = {
-                  type: "ordgroup",
-                  mode: "math",
-                  body: body
-                };
-              }
             } else {
               // If it wasn't ^, _, or ', stop parsing super/subscripts
               break;
@@ -18250,11 +17814,12 @@
             throw new src_ParseError("\\tag works only in display equations");
           }
 
+          parser.gullet.feed("\\df@tag");
           tree = [{
             type: "tag",
             mode: "text",
             body: tree,
-            tag: parser.subparse([new Token("\\df@tag")])
+            tag: parser.parse()
           }];
         }
 
@@ -18372,7 +17937,7 @@
         /**
          * Current KaTeX version
          */
-        version: "0.15.6",
+        version: "0.13.24",
 
         /**
          * Renders the given LaTeX into an HTML+MathML combination, and adds
@@ -18390,11 +17955,6 @@
          * KaTeX error, usually during parsing.
          */
         ParseError: src_ParseError,
-
-        /**
-         * The shema of Settings
-         */
-        SETTINGS_SCHEMA: SETTINGS_SCHEMA,
 
         /**
          * Parses the given LaTeX into KaTeX's internal parse tree structure,
