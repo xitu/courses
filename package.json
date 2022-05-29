@@ -28,6 +28,6 @@
     "remark-emoji": "^2.2.0",
     "remark-hint": "^1.0.10",
     "remark-math": "^3.0.1",
-    "remark-mdx": "^2.0.0-next.9"
+    "remark-mdx": "2.0.0-next.9"
   }
 }
