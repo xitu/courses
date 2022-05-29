@@ -4,8 +4,8 @@ import { useEffect, useState, useRef } from 'react'
 import { useCurrentDoc } from 'docz'
 
 import * as styles from './styles'
-import { NavLink } from 'gatsby-theme-docz/src/components/NavLink'
-import { ChevronDown } from 'gatsby-theme-docz/src/components/Icons'
+import { NavLink } from '~components/NavLink'
+import { ChevronDown } from '~components/Icons'
 
 const crypto = require('crypto')
 const digest = str =>

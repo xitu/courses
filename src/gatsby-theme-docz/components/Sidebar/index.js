@@ -5,9 +5,9 @@ import { jsx, Box } from 'theme-ui'
 import { useMenus, useCurrentDoc } from 'docz'
 
 import * as styles from './styles'
-import { NavSearch } from 'gatsby-theme-docz/src/components/NavSearch'
-import { NavLink } from 'gatsby-theme-docz/src/components/NavLink'
-import { NavGroup } from 'gatsby-theme-docz/src/components/NavGroup'
+import { NavSearch } from '~components/NavSearch'
+import { NavLink } from '~components/NavLink'
+import { NavGroup } from '~components/NavGroup'
 
 export const Sidebar = forwardRef(function Sidebar(props, ref) {
   const [query, setQuery] = useState('')
