@@ -2,10 +2,6 @@
 import { jsx } from 'theme-ui'
 import katex from 'katex'
 
-function createMarkup(__html) {
-  return {__html}
-}
-
 export const KaTeX = ({children, ...props}) => {
   const {macros, ...opts} = props
 
@@ -18,6 +14,6 @@ export const KaTeX = ({children, ...props}) => {
   })
 
   return (
-    <span className="katex" {...props} dangerouslySetInnerHTML={createMarkup(code)}/>
+    <span className="katex" {...props} dangerouslySetInnerHTML={{__html: code}}/>
   )
 }

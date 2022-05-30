@@ -2,6 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React, {useMemo, useState} from 'react';
+import {Unsafe} from '../Unsafe';
 import {TabsContext, useTabsContext} from './context';
 import {TabPane, Tabs as TabList, Wrapper} from './styles';
 import {Tab} from './tab';
@@ -21,10 +22,7 @@ const Pane = () => {
   const {current} = useTabsContext();
   if(current) {
     const children = current.children;
-    if(typeof children === 'string') {
-      return <TabPane dangerouslySetInnerHTML={{__html: children}}></TabPane>
-    }
-    return <TabPane>{children}</TabPane>
+    return <TabPane><Unsafe>{children}</Unsafe></TabPane>
   }
   return null;
 };

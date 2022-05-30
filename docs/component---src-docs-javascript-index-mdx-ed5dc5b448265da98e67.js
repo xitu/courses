@@ -18,7 +18,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _TopMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/TopMenu */ "gFLZ");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _Unsafe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Unsafe */ "wMQq");
+/* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! docz */ "ZFoC");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -29,6 +31,8 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
+
 
 
 
@@ -50,6 +54,8 @@ var layoutProps = {
 };
 var MDXLayout = _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__["default"];
 function MDXContent(_ref) {
+  var _ref2;
+
   var components = _ref.components,
       props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, _excluded);
 
@@ -281,7 +287,20 @@ function MDXContent(_ref) {
     }
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("span", {
     parentName: "span"
-  })))))))))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "Emojis in this text will be replaced: \uD83D\uDC36 \uD83D\uDC4D"));
+  })))))))))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "Emojis in this text will be replaced: \uD83D\uDC36 \uD83D\uDC4D"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_7__["Playground"], {
+    __position: 1,
+    __code: '<Unsafe>{`\n  <h2>Hello</h2>\n`}</Unsafe>',
+    __scope: (_ref2 = {
+      props: props,
+      DefaultLayout: _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+      TopMenu: _TopMenu__WEBPACK_IMPORTED_MODULE_5__["TopMenu"],
+      Unsafe: _Unsafe__WEBPACK_IMPORTED_MODULE_6__["Unsafe"],
+      Playground: docz__WEBPACK_IMPORTED_MODULE_7__["Playground"]
+    }, _ref2["DefaultLayout"] = _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__["default"], _ref2._frontmatter = _frontmatter, _ref2),
+    mdxType: "Playground"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_Unsafe__WEBPACK_IMPORTED_MODULE_6__["Unsafe"], {
+    mdxType: "Unsafe"
+  }, "\n    <h2>Hello</h2>\n  ")));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
