@@ -71,7 +71,7 @@ dl.jj-articles dd {
   font-size: 16px;
   -webkit-margin-start: auto;
           margin-inline-start: auto;
-  margin-bottom: 36px;
+  margin-bottom: 44px;
 }
 
 dl.jj-articles a {
@@ -82,7 +82,7 @@ dl.jj-articles a {
 dl.jj-articles author {
   position: absolute;
   right: 80px;
-  margin-top: 26px;
+  margin-top: 36px;
 }
 
 div.more a {
