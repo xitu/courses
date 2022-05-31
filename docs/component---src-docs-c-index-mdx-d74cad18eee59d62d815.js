@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-algorithm-index-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-c-index-mdx"],{
 
-/***/ "ASFO":
-/*!***************************************!*\
-  !*** ../src/docs/algorithm/index.mdx ***!
-  \***************************************/
+/***/ "doPk":
+/*!*******************************!*\
+  !*** ../src/docs/c/index.mdx ***!
+  \*******************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,7 +38,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/algorithm/index.mdx"
+      filename: "src/docs/c/index.mdx"
     }
   });
 }
@@ -57,8 +57,8 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     "className": "hint error"
   }, "This document is a Work in Progress."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
-    "id": "算法"
-  }, "\u7B97\u6CD5"));
+    "id": "c语言"
+  }, "C\u8BED\u8A00"));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -66,7 +66,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/algorithm/index.mdx"
+      filename: "src/docs/c/index.mdx"
     }
   });
 }
