@@ -35,9 +35,12 @@ fix(doczCorePath, fixDoczCoreFile);
 export default {
   title: '稀土教程',
   themeConfig: {
-    initialColorMode: 'dark',
+    // initialColorMode: 'dark',
     styles: {
       p: {
+        fontSize: 16,
+      },
+      li: {
         fontSize: 16,
       }
     }

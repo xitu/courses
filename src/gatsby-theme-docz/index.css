@@ -14,7 +14,7 @@ p.hint.error,
 p.hint.warn {
   letter-spacing: 0;
   box-sizing: border-box;
-  font-size: inherit;
+  font-size: 16px;
   line-height: 1.6rem;
   word-spacing: 0.05rem;
   background-color: rgba(238, 238, 238, 0.5);

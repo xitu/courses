@@ -7,7 +7,7 @@ export const JCode = (props, ref) => {
     width: '100%',
     height: `${props.height || 420}px`,
     border: 'solid 1px #ccc',
-    margin: '10px 0',
+    margin: '16px 0 32px 0',
   };
 
   return (
