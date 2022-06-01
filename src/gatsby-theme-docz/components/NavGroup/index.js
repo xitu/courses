@@ -31,30 +31,32 @@ export const NavGroup = ({ item, sidebarRef, nested }) => {
   }, [])
   const submenus = {}
   const menus = [];
-  let currentSubment;
-  for(let i = 0; i < menu.length; i++) {
-    const {submenu, ...m} = menu[i]
-    m.name = m.displayName || m.name;
-    if(submenu) currentSubment = submenu;
-    if(submenu && !submenus[submenu]) {
-      const s = {
-        name: submenu,
-        id: digest(submenu + Math.random()),
-        menu: [m],
-      };
-      submenus[submenu] = s;
-      menus.push(s);
-    } else if(submenu) {
-      submenus[submenu].menu.push(m);
-    } else {
-      if(!m.route) {
-        m.route = `###`
-        if(currentSubment) {
-          submenus[currentSubment].menu.push(m);
-          m.WIP = true;
-        }
+  if(menu) {
+    let currentSubment;
+    for(let i = 0; i < menu.length; i++) {
+      const {submenu, ...m} = menu[i]
+      m.name = m.displayName || m.name;
+      if(submenu) currentSubment = submenu;
+      if(submenu && !submenus[submenu]) {
+        const s = {
+          name: submenu,
+          id: digest(submenu + Math.random()),
+          menu: [m],
+        };
+        submenus[submenu] = s;
+        menus.push(s);
+      } else if(submenu) {
+        submenus[submenu].menu.push(m);
       } else {
-        menus.push(m)
+        if(!m.route) {
+          m.route = `###`
+          if(currentSubment) {
+            submenus[currentSubment].menu.push(m);
+            m.WIP = true;
+          }
+        } else {
+          menus.push(m)
+        }
       }
     }
   }
