@@ -31,9 +31,11 @@ export const NavGroup = ({ item, sidebarRef, nested }) => {
   }, [])
   const submenus = {}
   const menus = [];
+  let currentSubment;
   for(let i = 0; i < menu.length; i++) {
     const {submenu, ...m} = menu[i]
     m.name = m.displayName || m.name;
+    if(submenu) currentSubment = submenu;
     if(submenu && !submenus[submenu]) {
       const s = {
         name: submenu,
@@ -45,7 +47,15 @@ export const NavGroup = ({ item, sidebarRef, nested }) => {
     } else if(submenu) {
       submenus[submenu].menu.push(m);
     } else {
-      menus.push(m)
+      if(!m.route) {
+        m.route = `###`
+        if(currentSubment) {
+          submenus[currentSubment].menu.push(m);
+          m.WIP = true;
+        }
+      } else {
+        menus.push(m)
+      }
     }
   }
   return (
