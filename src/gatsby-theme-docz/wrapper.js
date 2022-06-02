@@ -31,6 +31,7 @@ const Wrapper = ({ children }) => {
                 type="image/png"
                 href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/apple-touch-icon.png"
             />
+            <script>localStorage.removeItem('theme-ui-color-mode-init')</script>
         </Helmet>
         {children}
         <footer style={footerStyle}>

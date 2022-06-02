@@ -16,7 +16,11 @@ export const Header = props => {
   const [colorMode, setColorMode] = useColorMode()
 
   const toggleColorMode = () => {
-    setColorMode(colorMode === 'light' ? 'dark' : 'light')
+    const update = colorMode === 'light' ? 'dark' : 'light';
+    setColorMode(update)
+    if(typeof localStorage !== 'undefined') {
+      localStorage.setItem('theme-ui-color-mode-init', update)
+    }
   }
   
   return (
