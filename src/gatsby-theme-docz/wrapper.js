@@ -20,7 +20,7 @@ const Wrapper = ({ children }) => {
     const currentDoc = useCurrentDoc()
     const title = currentDoc.menu ? `${currentDoc.menu} ${currentDoc.name}` : currentDoc.name
     const description = currentDoc.desc || title;
-    const keywords = currentDoc.keywords || title;
+    const keywords = currentDoc.keywords || currentDoc.menu;
     return (<React.Fragment>
         <Helmet>
             <meta charSet="utf-8" />
