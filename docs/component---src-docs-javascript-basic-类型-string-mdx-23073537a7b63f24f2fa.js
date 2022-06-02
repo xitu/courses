@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-algorithm-index-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-basic-类型-string-mdx"],{
 
-/***/ "ASFO":
-/*!***************************************!*\
-  !*** ../src/docs/algorithm/index.mdx ***!
-  \***************************************/
+/***/ "uUDn":
+/*!**************************************************!*\
+  !*** ../src/docs/javascript/basic/类型-String.mdx ***!
+  \**************************************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,7 +38,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/algorithm/index.mdx"
+      filename: "src/docs/javascript/basic/\u7C7B\u578B-String.mdx"
     }
   });
 }
@@ -57,8 +57,8 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     "className": "hint error"
   }, "This document is a Work in Progress."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
-    "id": "算法"
-  }, "\u7B97\u6CD5"));
+    "id": "字符串"
+  }, "\u5B57\u7B26\u4E32"));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -66,7 +66,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/algorithm/index.mdx"
+      filename: "src/docs/javascript/basic/\u7C7B\u578B-String.mdx"
     }
   });
 }

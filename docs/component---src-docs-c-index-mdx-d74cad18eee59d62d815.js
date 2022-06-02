@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-basic-数组-array-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-c-index-mdx"],{
 
-/***/ "mqOb":
-/*!*************************************************!*\
-  !*** ../src/docs/javascript/basic/数组-Array.mdx ***!
-  \*************************************************/
+/***/ "doPk":
+/*!*******************************!*\
+  !*** ../src/docs/c/index.mdx ***!
+  \*******************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,7 +38,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/javascript/basic/\u6570\u7EC4-Array.mdx"
+      filename: "src/docs/c/index.mdx"
     }
   });
 }
@@ -54,9 +54,11 @@ function MDXContent(_ref) {
   return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(MDXLayout, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, layoutProps, props, {
     components: components,
     mdxType: "MDXLayout"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
-    "id": "array"
-  }, "Array"));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
+    "className": "hint error"
+  }, "This document is a Work in Progress."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
+    "id": "c语言"
+  }, "C\u8BED\u8A00"));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -64,7 +66,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/javascript/basic/\u6570\u7EC4-Array.mdx"
+      filename: "src/docs/c/index.mdx"
     }
   });
 }

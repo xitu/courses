@@ -18,11 +18,11 @@ if(!self.__list) {
   }
 }
 
-const Pane = () => {
+const Pane = ({minHeight}) => {
   const {current} = useTabsContext();
   if(current) {
     const children = current.children;
-    return <TabPane><Unsafe>{children}</Unsafe></TabPane>
+    return <TabPane style={{minHeight}}><Unsafe>{children}</Unsafe></TabPane>
   }
   return null;
 };
@@ -37,7 +37,7 @@ Children.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const Tabs = ({activeId, children}) => {
+const Tabs = ({activeId, children, minHeight}) => {
   const [current, setCurrent] = useState(undefined);
 
   const value = useMemo(
@@ -53,7 +53,7 @@ const Tabs = ({activeId, children}) => {
     <TabsContext.Provider value={value}>
       <Wrapper>
         <Children children={children} />
-        <Pane />
+        <Pane minHeight={minHeight}/>
       </Wrapper>
     </TabsContext.Provider>
   );

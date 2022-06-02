@@ -1,0 +1,608 @@
+---
+name: 基本语法和数据类型
+route: /js/basic/grammar_and_types
+menu: JavaScript
+submenu: JS基础
+---
+
+# 基本语法和数据类型
+
+import {Tabs} from '@/Tabs';
+
+<Tabs activeId="1" minHeight="180px">
+  <Tabs.Tab id="1" title="参考资料📖">{`
+    ${__list([
+      ['语法和数据类型',
+       '本章讨论 JavaScript 的基本语法，变量声明，数据类型 和 字面量。',
+       'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Grammar_and_Types',
+       'From MDN'
+      ]
+    ])}
+    <div class="more"><a href="https://juejin.cn/post/6985459853183434789" target="_blank">👉🏻 更多内容📚</a></div>
+  `}</Tabs.Tab>
+  <Tabs.Tab id="2" title="练习题📝">{
+    __list([
+      ['练习',
+       '我们在码上掘金上试试看。',
+       'https://code.juejin.cn'
+      ],
+    ])
+  }</Tabs.Tab>
+  <Tabs.Tab id="3" title="交流讨论🔥">{
+    __list([
+      ['交流讨论',
+       '来沸点交流讨论吧💬',
+       'https://juejin.cn/pins/club/6824710202655244301'
+      ],
+    ])
+  }</Tabs.Tab>
+</Tabs>
+
+## 基础
+
+JavaScript 借鉴了 Java 的大部分语法，但同时也受到 Awk，Perl 和 Python的影响。 
+
+JavaScript代码由符号（Tokens）组成语句（Statements）和语句块（Blocks），然后由语句和语句块组成程序（Program）。
+
+对于JavaScript语言，符号是**词法**基本单元，而语句是**语法**基本单元。JavaScript通过一条语句来执行某个指令或者计算某个表达式的值。
+
+## 语句块（Block）
+
+语句由一个或多个Token构成，通常以分号`;`结尾。语句块由一条或多条语句构成，通常以右花括号`}`结尾。
+
+尽管在JavaScript中，我们随时可以单独使用一对花括号`{`和`}`构造一块语句块，但我们**一般很少这样做**。
+
+![独立语句块](public/code-block.jpg)
+
+在上面的例子里，我们使用花括号构建了一个语句块，在JavaScript中，语句块构成一个**块级作用域**，关于这个概念，我们将在后续章节中详细说明。现在我们只要简单理解，在语句块中可以再次声明一个语句块之外存在的变量，如果我们这么做了，我们可以在语句块中访问到的是语句块内部的变量，在语句块外访问到的是语句块外部的变量。
+
+我们一般不刻意单独使用语句块，而是在一些**复合语句**中，语句块作为其中的部分结构出现，我们后面会详细讨论，先试举一二例子：
+
+```js
+do {
+  if(subject.tagName === 'SECTION') {
+    break;
+  }
+  subject = subject.parentElement;
+} while(subject);
+```
+
+上面的`do...while`是一条**循环语句**，其中`do`执行的部分是一个语句块，do中的`if`语句是**条件分支语句**，它的**条件表达式**后面跟着的也是一个语句块，尽管其中只有`break;`一条语句。
+
+```js
+const add = function(x, y) {
+  return x + y;
+};
+```
+
+上面的`const add = function...`是一个变量声明和初始化语句，它将一个函数表达式的值赋给变量add，函数表达式本身的函数体部分也是一个语句块。
+
+从上面的例子我们看到，**JavaScript的一些语句可以包含语句块，语句块中再包含语句，层层嵌套，构成JavaScript程序结构**。
+
+为了表述方便，今后我们将语句和语句块统称为**语句**。我们将JavaScript的语句分为空语句、变量语句、函数声明语句、表达式语句、条件语句、循环语句、跳转语句、异常处理语句和其他语句，我们接下来将一一介绍它们。
+
+## 空语句
+
+顾名思义，**空语句**是不包含任何执行动作的语句，它只由一个分号Token构成。JavaScript解析器执行到空语句时不会执行任何动作。**空语句**一般不单独使用，而是与其他语句一同构成，比如在if语句或for语句中表示空的动作或条件。
+
+```js
+if(a > 0 && b < 1.5);
+else {
+  ...
+}
+```
+
+上面的if语句，当条件满足`a > 0`且`b < 1.5`的时候，不执行任何动作，其他情况下执行`else`条件。这时候我们使用空语句表示满足if条件时不执行任何动作。
+
+同样，我们可以省略`for`循环体：
+
+```js
+const arr = new Array(5);
+
+for(let i = 0; i < arr.length; arr[i] = ++i);
+
+console.log(arr); // [1, 2, 3, 4, 5]
+```
+
+实际上，上面两种情况不是很好的用法，因为if和for的右括号后面的分号很不起眼，这样容易造成一些bug。如果一定要这么用，建议加上注释：
+
+```js
+const arr = new Array(5);
+
+for(let i = 0; i < arr.length; arr[i] = ++i) /*do nothing*/;
+
+console.log(arr); // [1, 2, 3, 4, 5]
+```
+
+如果从代码清晰易懂的角度来讲，上面的写法都不必要，可以改成：
+
+```js
+if(a <= 0 || b >= 1.5){
+  ...
+}
+
+const arr = new Array(5);
+
+for(let i = 0; i < arr.length; ++i) {
+  arr[i] = i + 1;
+}
+
+console.log(arr); // [1, 2, 3, 4, 5]
+```
+
+## 声明语句
+
+与其他大多数编程语言一样，JavaScript的变量要**先声明再使用**。声明变量的语句是JavaScript的**声明语句**。
+
+JavaScript有三种声明变量的方式，分别是`let`、`var` 和 `const`，下面我们一一说明。
+
+### `let`声明变量
+
+`let`声明变量的基本格式为：
+
+```js
+let 变量名;
+```
+
+JavaScript在变量声明的同时还可以进行初始化，`let`变量声明并初始化的基本格式为：
+
+```js
+let 变量名 = 值;
+```
+
+我们可以通过逗号`,`同时声明多个变量：
+
+```js
+let a, b = 0, c, d = 1;
+```
+
+变量如果只声明不初始化，那么该变量的初始值为`undefined`。
+
+```js
+let a, b = 0, c, d = 1;
+
+console.log(a, b, c, d); // undefined, 0, undefined, 1
+```
+
+### 作用域
+
+“作用域(scope)”是程序设计的一个重要概念，它是指变量（或函数）声明后可以被访问的代码范围。在单一文件里，let声明的变量只在它所在的块（blocks）中有效，如果let声明在任何block之外，那么该let声明的变量在它声明之后直到文件末尾都有效。我们前面已经见过这样的例子：
+
+```js
+let foo = 'foo';
+let bar = 'outer bar';
+{
+  let bar = 'inner bar';
+  console.log(foo, bar);  // foo inner bar
+}
+console.log(foo, bar);  // foo outer bar
+```
+
+上面的例子，block中重新声明bar会覆盖外层的bar,因此在block内部访问到的bar是内层的`inner bar`，在block外访问到的则是外层的`outer bar`。因为foo只声明在外层，block内没有声明，所以在块内块外访问foo，得到的都是外层的foo。
+
+如果我们只在block内声明一个变量，而在block外尝试访问它，那么解释器会抛出变量不存在的异常：
+
+```js
+let foo = 'foo';
+{
+  let bar = 'inner bar';
+  console.log(foo, bar); // foo inner bar
+}
+console.log(foo, bar); // Uncaught ReferenceError: bar is not defined
+```
+
+block作用域适用于任何可以出现在语句块的地方，例如if语句、while语句、函数体、try...catch等等，另外for语句的条件中以`let`声明变量，变量的作用域也被限制在for语句的语句块中。
+
+```js
+let a = 10;
+if(a > 0) {
+  let a = 20;
+  console.log(a); // 20
+}
+console.log(a); // 10
+```
+
+```js
+let i =  100;
+for(let i = 0; i < 5; i++) {
+  console.log(i); // 0 1 2 3 4 
+}
+console.log(i); // 100
+```
+
+我们必须在`let`声明之后才能使用变量，如果我们在声明之前使用它，解释器会抛出异常。
+
+```js
+console.log(a); // Uncaught ReferenceError: a is not defined
+let a = 10;
+console.log(a);
+```
+
+这里还有一点需要注意，虽然我们在block内部可以访问block外部声明的变量，但当我们在block内以`let`声明一个变量时，不管它出现在什么位置，我们在整个block内的任何位置都不能再访问和这个同名的外部变量：
+
+```js
+let foo = 'foo';
+let bar = 'outer bar';
+
+{
+  console.log(foo); // foo
+  console.log(bar); // Uncaught ReferenceError: bar is not defined
+  let bar = 'inner bar';
+  console.log(foo);
+  console.log(bar);
+}
+console.log(foo);
+console.log(bar);
+```
+
+上面的例子里，程序在第一个`console.log(bar)`那里就会抛出异常，因为block内以`let`方式声明了bar，而`console.log(bar)`在`let`声明之前就访问了bar。尽管外部还有声明bar，但是这里仍然会抛出异常，而不能访问到外部的bar的值。访问`console.log(foo)`则没有问题，因为在block内部没有声明foo，它访问到的是正常的外部的foo。
+
+这种情况，相当于在block内部从左花括号`{`开始直到`let bar`语句这条语句之间的这个区域都不能访问bar这个变量，这个区间被称为变量bar的**暂时死区**(Temporal Dead Zone简称`TDZ`)。用let声明变量总会导致TDZ，范围从作用域开始位置到let声明位置之间，在这个位置中间无论外层有没有声明同名变量，该变量都不能被访问。
+
+### `var`声明变量
+
+`var`声明变量的基本格式为：
+
+```js
+var 变量名;
+```
+
+与`let`声明一样，变量可以在声明的同时进行初始化：
+
+```js
+var 变量名 = 值;
+```
+
+我们也一样可以通过逗号`,`同时声明多个变量，未初始化变量的值也是`undefined`。
+
+```js
+var a, b = 1, c = 2, d;
+
+console.log(a, b, c, d); // undefined 1 2 undefined
+```
+
+`var`是JavaScript早期的变量声明方式，在ES5之前，我们只能使用`var`声明变量。`var`与`let`声明有许多不同之处。首先`var`没有块级作用域，如果同时在块内和外层声明同名的变量，实际上变量只会被声明一次。
+
+```js
+var foo = 'foo',
+  bar = 'outer bar';
+{
+  var bar = 'inner bar';
+  console.log(foo, bar); // foo inner bar
+}
+console.log(foo, bar); // foo inner bar
+```
+
+上面的代码，实际上相当于：
+
+```js
+var foo = 'foo',
+  bar = 'outer bar';
+{
+  bar = 'inner bar';
+  console.log(foo, bar);
+}
+console.log(foo, bar);
+```
+
+同样，在循环语句中声明的变量，作用域会覆盖到循环语句外：
+
+```js
+for(var i = 0; i < 5; i++) {
+  console.log(i); // 0 1 2 3 4
+}
+console.log(i); // 5
+```
+
+上面的代码相当于：
+
+```js
+var i;
+for(i = 0; i < 5; i++) {
+  console.log(i);
+}
+console.log(i);
+```
+
+`var`声明的变量虽然没有块级作用域，但是JavaScript函数体有作用域，因此我们可以使用立即调用函数(IIFE)来为var声明的变量构造作用域。关于立即调用函数(IIFE)在这里可以不必深究，在后续课程中我们还会有进一步的介绍。
+
+```js
+var foo = 'foo',
+  bar = 'outer bar';
+(function() {
+  var bar = 'inner bar';
+  console.log(foo, bar); // foo inner bar
+}());
+console.log(foo, bar); // foo outer bar
+```
+
+与`let`会造成TDZ不同，`var`声明的变量不论在什么位置，声明都会被提升（hoist）到函数作用域的最开始处，如果`var`不在任何函数内部而在最外层，那么声明会被提升到文件开头。因此，在初始化之前的任何位置调用`var`声明的变量，都不会抛出异常，而是返回变量初始值undefined：
+
+```js
+var foo = 'foo';
+var bar = 'outer bar';
+
+(function(){
+  console.log(foo); // foo
+  console.log(bar); // undefined
+  var bar = 'inner bar';
+  console.log(foo); // foo
+  console.log(bar); // inner bar
+}());
+console.log(foo); // foo
+console.log(bar); // outer bar
+```
+
+上面的例子里，在IIFE函数中第一次访问变量bar时，因为它还未初始化，所以bar的值是undefined。上面的代码中，内层的bar声明被提升到函数作用域的最开始处，相当于：
+
+```js
+var foo = 'foo';
+var bar = 'outer bar';
+
+(function(){
+  var bar;
+  console.log(foo); // foo
+  console.log(bar); // undefined
+  bar = 'inner bar';
+  console.log(foo); // foo
+  console.log(bar); // inner bar
+}());
+console.log(foo); // foo
+console.log(bar); // outer bar
+```
+
+另外，浏览器的JavaScript里，当`let`和`var`声明出现在最外层时，`var`声明的变量可以通过浏览器window对象的属性访问，而let声明的变量则不可以：
+
+```js
+var a = 10;
+console.log(a, window.a); // 10 10
+
+let b = 20;
+console.log(b, window.b); // 20 undefined
+```
+
+而注意，在Node.js里，不论是`let`还是`var`声明的最外层变量，都不能通过global对象的属性访问到。
+
+```js
+var a = 10;
+console.log(a, global.a); // 10 undefined
+
+let b = 20;
+console.log(b, global.b); // 20 undefined
+```
+
+### 不声明直接使用变量
+
+前面我们说过，在非严格模式下，如果不声明直接使用变量，那么变量会被视为全局变量，在浏览器下可以通过window属性访问到，在Node.js下可以通过global访问到。
+
+```js
+a = 10;
+console.log(window.a); // 10，在Node.js下global.a也是10
+```
+
+在严格模式下，不声明直接使用变量会抛出异常。
+
+```js
+'use strict';
+a = 10;
+console.log(window.a); // Uncaught ReferenceError: a is not defined
+```
+
+虽然说非严格模式并不禁止不声明直接使用变量，但这是一种非常不好的习惯，应当要禁止。无论任何时候，我们使用变量的时候，都应该要先声明再使用。当我们配置了eslint时，只要我们无意中忘记声明而直接使用了变量，eslint就会给出提示。
+
+```js
+for(i = 0; i < 5; i++) { // 这里忘记了对i进行声明，eslint会给出错误信息提示
+
+}
+```
+
+### `const`声明变量
+
+`const`是英文单词constant的简称，表示“常量”的意思。`const`的使用方式和`let`几乎完全一样。区别在于，使用`const`声明的变量不能只声明不初始化，而必须在声明的时候初始化，而且一旦初始化了，在之后的代码中不能对它重新赋值。
+
+```js
+const foo = 'foo';
+foo = 'bar'; // Uncaught TypeError: Assignment to constant variable.
+```
+
+上面的代码中，我们尝试对foo重新赋值，解释器会抛出异常。需要注意的是，虽然`const`声明禁止对变量重新赋值，但是它并不禁止修改非基本数据类型变量的属性值：
+
+```js
+const foo = {x: 1};
+foo.x = 2;
+console.log(foo); // {x: 2}
+foo = 'bar'; // Uncaught TypeError: Assignment to constant variable.
+```
+
+上面的代码，`const foo`声明允许修改foo的属性值，因此`foo.x = 2`是可以正常运行的，但是不能对`foo`本身进行赋值，所以`foo = 'bar'`是被禁止的。
+
+与`let`一样，`const`也同样有块级作用域和`TDZ`。
+
+## 数据类型
+
+最新的 ECMAScript 标准定义了 8 种数据类型，分别是：
+
+- 七种基本数据类型（Primitive Types）
+  - undefined - 变量未赋值时的默认值，表示一个`未定义`的数据。
+  - null - 表示变量未绑定具体变量的一个特殊值，通常用来作为对象类型的数据未被指定具体值时的初始值。
+  - 布尔值（Boolean) - 包含`true`和`false`两个字面量，表示逻辑`真`与`假`。
+  - [数值（Number）](/js/basic/number) - 表示整数或浮点数。
+  - [大整数（BigInt）](/js/basic/bigint) - 表示任意精度的整数。
+  - [字符串（String）](js/basic/string) - 表示文本的数据类型。
+  - [Symbol](js/basic/symbol) - 一种实例是唯一且不可改变的数据类型。
+
+- 对象类型（Object)
+  
+  对象分为普通[对象（Object）](/js/basic/object)和可调用对象（Callable Object)，可调用对象即[函数（function)](/js/basic/function)。
+
+  基本数据类型、对象（Objects）和函数（functions）是JavaScript的基本元素。基本数据类型用来表示不同类型的值，对象可以看做存放值的一个命名容器，函数是你的程序能够执行的步骤。
+
+## 类型检查
+
+JavaScript是一种动态类型的语言，运行时任意标识符可以赋值任意类型的数据，在运行过程中也能够随时改变绑定的数据类型。JavaScript提供了在运行时判断类型的运算符`typeof`，它能够返回对应的数据类型的字符串描述。对于除了`null`以外的6种基本数据类型的数据，`typeof`分别返回`'undefined','boolean','number','bigint','string'`和`'symbol'`，而由于历史原因，`typeof null`返回`'object'`。对于非基本数据类型的数据，`Object`类型的`typeof`结果也为`'object'`，Function类型的`typeof`结果为`'function'`。
+
+```js
+console.log(
+  typeof null,        // object
+  typeof undefined,   // undefined
+  typeof true,        // boolean
+  typeof 123,         // number
+  typeof 123n,        // bigint
+  typeof 'abc',       // string
+  typeof Symbol(),    // symbol
+	typeof Object(),    // object
+  typeof (()=>{}),      // function
+); 
+
+```
+
+## 类型转换
+
+JavaScript是弱类型语言，它容忍隐式类型转换，比如前面说过的在布尔判断时可以将其他值转为Boolean类型。同样的，其他的数据类型在一些条件下也可以自动转换。
+
+### 运算的隐式类型转换规则
+
+JavaScript的隐式数据类型转换标准比较复杂，在这里我们仅介绍几个最常见的隐式转换。完整的规则参考[ECMA-262](https://www.ecma-international.org/ecma-262/#sec-type-conversion)标准文档。
+
+字符串与数值进行相加时，数值被转转换为字符串：
+
+```js
+const a = 10, b = 'abc', c = 1;
+
+console.log(a + b + c); // 10abc1
+```
+
+字符串参与非加法数学运算时，字符串被转换为数值再进行运算：
+
+```js
+const a = 123, b = '456', c = 1
+
+console.log(a + b - c); //123455
+```
+
+如果字符串不是合法的数值格式（合法的数值格式包括十进制整数、浮点数、二进制、八进制、十六进制数和科学记数法以及+Infinity、-Infinity），那么运算的结果为NaN：
+
+```js
+const a = 123, b = 'abc', c = 1;
+
+console.log(a + b - c); // NaN
+```
+
+布尔值与数值进行运算时，`true`视为1，`false`视为0，结果为数值：
+
+```js
+const a = true, b = false;
+
+console.log(a + 1, b * 3); // 2 0
+```
+
+布尔值与字符串进行相加时，`true`转换为字符串'true'，`false`转换为字符串'false'：
+
+```js
+const a = true, b = false;
+
+console.log(a + '', b + 'foobar') // 'true' 'falsefoobar'
+```
+
+#### ==与===
+
+JavaScript在对两个数进行`==`比较时，会对两个数进行隐式类型转换，规则如下。
+
+对`x==y`，如果：
+
+1. 如果x和y是类型相同的基本数据类型，对它们的值进行比较
+1. 如果x和y是Object类型，如果它们引用同样的对象，返回true
+1. 如果x是null或undefined，y也是null或undefined，返回true
+1. x的类型是Number，y的类型是String，那么将y转换为Number进行比较
+1. x的类型是String，y的类型是Number，那么将x转换为Number进行比较
+1. x的类型是Boolean，那么先将x转为Number，再照规则4、5进行比较
+1. y的类型是Boolean，那么先将y转为Number，再照规则4、5进行比较
+1. 如果x的类型是String、Number或Symbol，y的类型是非基本数据类型，那么先将y转为基本数据类型之后再比较。
+1. 如果y的类型是String、Number或Symbol，x的类型是非基本数据类型，那么先将x转为基本数据类型之后再比较。
+1. 其他情况返回 false
+
+举几个例子：
+
+```js
+console.log(100 == '1e2'); // true
+console.log(true == '1', false == 0); // true true
+
+let foo, bar = null;
+console.log(foo == null, bar == null,
+	foo == undefined, bar == undefined); // true true true true 
+```
+
+由于`==`会做隐式类型转换，在一些情况下可能造成不可预料的结果，所以一般来说，我们推荐尽量使用`===`来进行比较，后者不会做隐式类型转换，更加安全。
+
+```js
+console.log(true == 1, true === 1); // true false
+```
+
+但是我们在通常情况下不区分null还是undefined，因此在判断null的时候仍然可以使用`==`。
+
+### 显式类型转换
+
+当我们使用了`===`进行比较之后，两个不同类型的值比较的结果总是`false`。有时候我们确实要进行类型转换再比较，这时可以使用显式类型转换。
+
+通过调用方法`Number`、`String`、`Boolean`可以将值显式转换类型。
+
+例如：
+
+```js
+console.log(Number('123') === 123); // true
+console.log(String(0xf) === '15'); // true
+console.log(Boolean(null) === false); // true
+```
+
+## 值和引用
+
+JavaScript的基本数据类型和Object的一个重要区别是基本数据类型是**值类型**，而Object类型是**引用类型**。具体而言，就是当给一个标识符赋予值类型的数据时，可以理解为这个标识符绑定的内容是该数据类型的一个“值“，而当给一个标识符赋予一个引用类型的数据时，这个标识符绑定的内容是指向该数据类型真实值的“引用”，（即：内存地址）。我们举例看二者区别：
+
+```js
+let a = 10;
+let b = a;
+
+a = a + 1;
+console.log(a, b); // 11, 10
+```
+
+上面的例子，a绑定“值“10，`b = a`让b的值绑定和a同样的值，即b的值也是10。当我们让`a = a + 1`时，a的值变成11，而b的值仍然是10，这是因为a、b两个变量绑定的是两个不同的数据，虽然它们一开始的值相等，但是我们改变一个，另一个不会跟着改变。
+
+我们再看引用的例子：
+
+```js
+let a = { x: 10 };
+let b = a;
+
+a.x = a.x + 1;
+
+console.log(a.x, b.x); // 11, 11
+```
+
+上面的例子，a绑定对象`{x: 10}`，`b = a`让b绑定和a同样的引用，也就是说此时a、b实际上指向同一个对象，a.x也是b.x，所以当a.x的值改变的时候，b.x的值也随之改变。JavaScript的规范这样规定：**绑定原始对象的值，绑定非原始对象的引用**。
+
+同样，我们再举一个例子：
+
+```js
+function inc(x) {
+	return x + 1;
+}
+
+function incKey(obj, key) {
+	obj[key] += 1;
+}
+
+const a = 1, b = {x: 1};
+
+const c = inc(a);
+
+console.log(a, b, c); // 1 {x: 1} 2
+
+incKey(b, 'x');
+
+console.log(b.x); // 2
+```
+
+在上面的例子里，传给`inc(x)`的是数值，是值类型，所以`inc(a)`的操作并不会改变实际的a的值，而`incKey(b)`传的是引用，所以`obj[key] += 1`改变了b.x的值。
+
+根据上面的例子可以看出，值和引用在实际操作过程中有明显的区别，学习JavaScript应当理解它们的差异。

@@ -5,7 +5,7 @@ module.exports = {
 
     // JS基础
     '语言结构',
-    '基本语法和类型',
+    '基本语法和数据类型',
     '基本类型-Number',
     '基本类型-String',
     '基本类型-Symbol',

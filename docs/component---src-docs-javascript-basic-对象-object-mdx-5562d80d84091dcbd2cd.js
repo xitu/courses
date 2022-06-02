@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-basic-基本语法和类型-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-javascript-basic-对象-object-mdx"],{
 
-/***/ "NPky":
-/*!************************************************!*\
-  !*** ../src/docs/javascript/basic/基本语法和类型.mdx ***!
-  \************************************************/
+/***/ "q1h/":
+/*!**************************************************!*\
+  !*** ../src/docs/javascript/basic/对象-Object.mdx ***!
+  \**************************************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,7 +38,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/javascript/basic/\u57FA\u672C\u8BED\u6CD5\u548C\u7C7B\u578B.mdx"
+      filename: "src/docs/javascript/basic/\u5BF9\u8C61-Object.mdx"
     }
   });
 }
@@ -56,7 +56,9 @@ function MDXContent(_ref) {
     mdxType: "MDXLayout"
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     "className": "hint error"
-  }, "This document is a Work in Progress."));
+  }, "This document is a Work in Progress."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
+    "id": "object"
+  }, "Object"));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -64,7 +66,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/javascript/basic/\u57FA\u672C\u8BED\u6CD5\u548C\u7C7B\u578B.mdx"
+      filename: "src/docs/javascript/basic/\u5BF9\u8C61-Object.mdx"
     }
   });
 }
