@@ -277,7 +277,7 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "github.io"), "\u7684\u670D\u52A1\uFF0C\u8FD0\u884C", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
-  }, "npm run prepublishOnly"), "\u7136\u540E\u63D0\u4EA4PR\u5230Github\u4ED3\u5E93\uFF0Cmerge\u540E\u7F51\u7AD9\u5185\u5BB9\u5C31\u4F1A\u66F4\u65B0\u3002"));
+  }, "npm run deploy"), "\u7136\u540E\u63D0\u4EA4PR\u5230Github\u4ED3\u5E93\uFF0Cmerge\u540E\u7F51\u7AD9\u5185\u5BB9\u5C31\u4F1A\u66F4\u65B0\u3002"));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -296,4 +296,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-index-mdx-4b43ffe0c7daae4a4ab2.js.map
+//# sourceMappingURL=component---src-docs-index-mdx-d98b798df990557c3bd3.js.map

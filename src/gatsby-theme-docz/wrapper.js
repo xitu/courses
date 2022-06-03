@@ -21,12 +21,14 @@ const Wrapper = ({ children }) => {
     const title = currentDoc.menu ? `${currentDoc.menu} ${currentDoc.name}` : currentDoc.name
     const description = currentDoc.desc || title;
     const keywords = currentDoc.keywords || currentDoc.menu;
+    const author = currentDoc.author;
     return (<React.Fragment>
         <Helmet>
             <meta charSet="utf-8" />
             <title>掘金 - {title}</title>
             <meta name="description" content={description}/>
             <meta name="keywords" content={keywords}/>
+            {author && <meta name="author" content={author}/>}
             <link rel="icon"
                 type="image/png"
                 href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/apple-touch-icon.png"
