@@ -37,6 +37,9 @@ export default {
   themeConfig: {
     // initialColorMode: 'dark',
     styles: {
+      h1: {
+        marginBottom: '2rem',
+      },
       p: {
         fontSize: 16,
       },

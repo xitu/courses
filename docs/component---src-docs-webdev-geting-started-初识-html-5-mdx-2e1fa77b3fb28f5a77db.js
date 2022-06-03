@@ -56,7 +56,9 @@ function MDXContent(_ref) {
   return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(MDXLayout, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, layoutProps, props, {
     components: components,
     mdxType: "MDXLayout"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
+    "id": "初识html5"
+  }, "\u521D\u8BC6HTML5"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "什么是html"
   }, "\u4EC0\u4E48\u662FHTML"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "HTML\u662F\u8D85\u6587\u672C\u6807\u8BB0\u8BED\u8A00\u7684\u7F29\u5199\uFF0C\u5B83\u662F\u6D4F\u89C8\u5668\u80FD\u591F\u8BC6\u522B\u5E76\u5904\u7406\u7684\u4E00\u79CD\u6587\u672C\u8BED\u8A00\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "HTML\u7531\u6807\u7B7E\u548C\u6587\u672C\u5185\u5BB9\u7EC4\u6210\uFF0C\u6807\u7B7E\u544A\u8BC9\u6D4F\u89C8\u5668\u4EE5\u4F55\u79CD\u65B9\u5F0F\u663E\u793A\u6807\u7B7E\u4E2D\u7684\u6587\u672C\u5185\u5BB9\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u5148\u6765\u5C1D\u8BD5\u4E00\u4E0B\u4E66\u5199HTML\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u6253\u5F00", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("a", {
     parentName: "p",
@@ -358,4 +360,4 @@ module.exports = __webpack_require__.p + "static/html-tag-f0b0f9b72057149d97c31f
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-初识-html-5-mdx-edcc39693be3d7a33cb6.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-初识-html-5-mdx-2e1fa77b3fb28f5a77db.js.map

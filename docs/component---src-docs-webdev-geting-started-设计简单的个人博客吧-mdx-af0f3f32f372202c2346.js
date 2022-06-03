@@ -56,7 +56,9 @@ function MDXContent(_ref) {
   return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(MDXLayout, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, layoutProps, props, {
     components: components,
     mdxType: "MDXLayout"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
+    "id": "设计简单的个人博客吧"
+  }, "\u8BBE\u8BA1\u7B80\u5355\u7684\u4E2A\u4EBA\u535A\u5BA2\u5427"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "项目准备"
   }, "\u9879\u76EE\u51C6\u5907"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u8981\u5EFA\u7ACB\u7684\u4E2A\u4EBA\u535A\u5BA2\u5F88\u7B80\u5355\uFF0C\u521D\u671F\u6211\u4EEC\u53EA\u5305\u542B\u9996\u9875\u3001\u6587\u7AE0\u9875\u3001\u4E2A\u4EBA\u7B80\u4ECB\u3001\u548C\u53CB\u60C5\u94FE\u63A5\u8FD94\u4E2A\u9875\u9762\u3002\b"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u5206\u522B\u770B\u4E00\u4E0B\u5B83\u4EEC\u7684\u4EA7\u54C1\u539F\u578B\u56FE\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("img", {
     alt: "blog index",
@@ -174,4 +176,4 @@ module.exports = __webpack_require__.p + "static/blog-index-933ee03d319978e1c706
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-设计简单的个人博客吧-mdx-cc6ed468fcf02154bad5.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-设计简单的个人博客吧-mdx-af0f3f32f372202c2346.js.map
