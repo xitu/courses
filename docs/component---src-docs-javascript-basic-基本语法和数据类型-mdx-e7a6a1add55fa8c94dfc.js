@@ -588,3 +588,4 @@ module.exports = __webpack_require__.p + "static/code-block-98d223247a4a1850cebb
 /***/ })
 
 }]);
+//# sourceMappingURL=component---src-docs-javascript-basic-基本语法和数据类型-mdx-e7a6a1add55fa8c94dfc.js.map

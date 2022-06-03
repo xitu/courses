@@ -87,3 +87,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
+//# sourceMappingURL=component---src-docs-javascript-basic-类型-big-int-mdx-18a766fabbc9b75bf43b.js.map

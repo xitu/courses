@@ -17,3 +17,4 @@ var NotFound=function NotFound(){var style={display:'flex',alignItems:'center',j
 /***/ })
 
 }]);
+//# sourceMappingURL=component---src-pages-404-js-fbe8c32a15b4e8690537.js.map

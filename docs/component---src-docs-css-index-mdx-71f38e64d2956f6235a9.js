@@ -77,3 +77,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
+//# sourceMappingURL=component---src-docs-css-index-mdx-71f38e64d2956f6235a9.js.map

@@ -77,3 +77,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
+//# sourceMappingURL=component---src-docs-go-index-mdx-2db519620f00c6935288.js.map
