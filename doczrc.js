@@ -45,7 +45,7 @@ export default {
       }
     }
   },
-  base: '/courses/',
+  // base: '/courses/',
   files: 'src/**/*.{md,markdown,mdx}',
   src: 'src',
   editBranch: 'main',
