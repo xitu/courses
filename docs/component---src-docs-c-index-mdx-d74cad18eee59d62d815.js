@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-webdev-geting-started-用js改变网页-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-c-index-mdx"],{
 
-/***/ "ZRJQ":
-/*!*****************************************************!*\
-  !*** ../src/docs/webdev/geting_started/用JS改变网页.mdx ***!
-  \*****************************************************/
+/***/ "doPk":
+/*!*******************************!*\
+  !*** ../src/docs/c/index.mdx ***!
+  \*******************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,7 +38,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/webdev/geting_started/\u7528JS\u6539\u53D8\u7F51\u9875.mdx"
+      filename: "src/docs/c/index.mdx"
     }
   });
 }
@@ -56,7 +56,9 @@ function MDXContent(_ref) {
     mdxType: "MDXLayout"
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     "className": "hint error"
-  }, "This document is a Work in Progress."));
+  }, "This document is a Work in Progress."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
+    "id": "c语言"
+  }, "C\u8BED\u8A00"));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -64,7 +66,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/webdev/geting_started/\u7528JS\u6539\u53D8\u7F51\u9875.mdx"
+      filename: "src/docs/c/index.mdx"
     }
   });
 }
@@ -75,4 +77,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-用js改变网页-mdx-2e2c15cffa51f7f9c62a.js.map
+//# sourceMappingURL=component---src-docs-c-index-mdx-d74cad18eee59d62d815.js.map
