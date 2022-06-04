@@ -29,7 +29,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/JCode */ "1aoM");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -40,6 +41,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -156,7 +158,17 @@ function MDXContent(_ref) {
     parentName: "ul"
   }, "\u5B58\u50A8\u548C\u5904\u7406\u7528\u6237\u6570\u636E\u548C\u64CD\u4F5C\u72B6\u6001"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
     parentName: "ul"
-  }, "\u4E30\u5BCC\u9875\u9762\u5C55\u73B0\u5F62\u5F0F\u7B49\u804C\u8D23\u3002")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6B64\u5916\uFF0CJavaScript\u5728Web\u5DE5\u7A0B\u4E2D\u8FD8\u627F\u62C5\u5DE5\u7A0B\u5316\u6784\u5EFA\u548C\u90E8\u7F72\u3001\u5355\u5143\u6D4B\u8BD5\u3001\u96C6\u6210\u6D4B\u8BD5\u3001\u811A\u672C\u7F16\u8BD1\u3001\u6253\u70B9\u7EDF\u8BA1\u7B49\u529F\u80FD\u4EE5\u53CA\u5176\u4ED6\u4E30\u5BCC\u7528\u9014\u3002\u5173\u4E8EJavaScript\u4F7F\u7528\u7684\u5404\u4E2A\u65B9\u9762\uFF0C\u5728\u540E\u7EED\u8BFE\u7A0B\u4E2D\u6211\u4EEC\u4F1A\u6709\u673A\u4F1A\u4E00\u4E00\u6DF1\u5165\u8BB2\u89E3\u3002"));
+  }, "\u4E30\u5BCC\u9875\u9762\u5C55\u73B0\u5F62\u5F0F\u7B49\u804C\u8D23\u3002")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6B64\u5916\uFF0CJavaScript\u5728Web\u5DE5\u7A0B\u4E2D\u8FD8\u627F\u62C5\u5DE5\u7A0B\u5316\u6784\u5EFA\u548C\u90E8\u7F72\u3001\u5355\u5143\u6D4B\u8BD5\u3001\u96C6\u6210\u6D4B\u8BD5\u3001\u811A\u672C\u7F16\u8BD1\u3001\u6253\u70B9\u7EDF\u8BA1\u7B49\u529F\u80FD\u4EE5\u53CA\u5176\u4ED6\u4E30\u5BCC\u7528\u9014\u3002\u5173\u4E8EJavaScript\u4F7F\u7528\u7684\u5404\u4E2A\u65B9\u9762\uFF0C\u5728\u540E\u7EED\u8BFE\u7A0B\u4E2D\u6211\u4EEC\u4F1A\u6709\u673A\u4F1A\u4E00\u4E00\u6DF1\u5165\u8BB2\u89E3\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'layout_and_styles'
+    },
+    next: {
+      name: '下一节',
+      src: 'publish_your_blog_work'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -197,4 +209,4 @@ module.exports = __webpack_require__.p + "static/html-css-javascript-b19faf7726b
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-用js改变网页-mdx-9919f3ee39f11c8c3c57.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-用js改变网页-mdx-e10c33707bdfc8eb10ef.js.map

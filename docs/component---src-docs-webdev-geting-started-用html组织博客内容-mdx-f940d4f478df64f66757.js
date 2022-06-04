@@ -40,7 +40,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/JCode */ "1aoM");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -51,6 +52,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -228,7 +230,17 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "HTML\u6807\u7B7E\uFF08\u5143\u7D20\uFF09\u662F\u5177\u6709\u8BED\u4E49\u7684\uFF0C\u4F7F\u7528\u6B63\u786E\u8BED\u4E49\u6807\u7B7E\u4E66\u5199HTML\uFF0C\u662F\u57FA\u672C\u539F\u5219"), "\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "HTML\u6807\u7B7E\u7684\u8BED\u4E49\uFF0C\u662F\u6307\u6807\u7B7E\u672C\u8EAB\u7684\u7B26\u53F7\u6240\u8868\u793A\u7684\u542B\u4E49\uFF0C\u6BD4\u5982h1\u8868\u793A\u4E00\u7EA7\u6807\u9898\uFF0Ch2\u8868\u793A\u4E8C\u7EA7\u6807\u9898\uFF0Cp\u8868\u793A\u6BB5\u843D\uFF0Carticle\u8868\u793A\u6587\u7AE0\uFF0Cfooter\u8868\u793A\u9875\u811A\uFF0Ca\u8868\u793A\u94FE\u63A5\uFF0Cimg\u8868\u793A\u56FE\u7247\u3002\u8FD9\u4E9B\u8BED\u4E49\uFF0C\u4E0D\u4EC5\u4EC5\u662F\u9488\u5BF9\u4E66\u5199\u548C\u9605\u8BFBHTML\u6587\u6863\u7684\u4EBA\u7684\uFF0C\u4E5F\u662F\u9488\u5BF9\u6D4F\u89C8\u5668\u3001\u8BFB\u5C4F\u8F6F\u4EF6\u3001\u641C\u7D22\u5F15\u64CE\u8718\u86DB\u548C\u5176\u4ED6\u7B2C\u4E09\u65B9\u5DE5\u5177\u7684\u3002\u6BD4\u5982\u4F5C\u4E3A\u94FE\u63A5\u7684a\uFF0C\u4E0D\u4EC5\u4EC5\u5728\u6D4F\u89C8\u5668\u4E0A\u5448\u73B0\u4E0D\u540C\u7684\u989C\u8272\u548C\u884C\u4E3A\uFF0C\u4E5F\u80FD\u88AB\u8BFB\u5C4F\u8F6F\u4EF6\u6B63\u786E\u8BC6\u522B\uFF0C\u4ECE\u800C\u4F7F\u89C6\u89C9\u969C\u788D\u4EBA\u58EB\u80FD\u591F\u6B63\u5E38\u4F7F\u7528\u3002h1\u3001h2\u7B49\u6807\u7B7E\u4E5F\u662F\u540C\u6837\uFF0C\u6D4F\u89C8\u5668\u3001\u8BFB\u5C4F\u8F6F\u4EF6\u80FD\u591F\u8BC6\u522B\u51FA\u8FD9\u662F\u6807\u9898\uFF0C\u662F\u7F51\u9875\u91CC\u6BD4\u8F83\u91CD\u8981\u7684\u5185\u5BB9\uFF0C\u4EE5\u4FBF\u4EE5\u4E0D\u540C\u7684\u65B9\u5F0F\u5904\u7406\u5E76\u4F20\u9012\u4FE1\u606F\u7ED9\u7528\u6237\uFF0C\u641C\u7D22\u5F15\u64CE\u8718\u86DB\u4E5F\u4F1A\u4EE5\u66F4\u9AD8\u7684\u6743\u91CD\u5BF9\u5F85\u8FD9\u4E9B\u5185\u5BB9\u3002\u6240\u4EE5\uFF0C\u6B63\u786E\u4F7F\u7528\u8BED\u4E49\u6807\u7B7E\uFF0C\u4E0D\u4EC5\u4F7F\u5F97\u9875\u9762\u5185\u5BB9\u66F4\u6613\u88AB\u5F00\u53D1\u8005\u9605\u8BFB\u548C\u7406\u89E3\uFF0C\u4E5F\u66F4\u6613\u88AB\u5DE5\u5177\u8BC6\u522B\u548C\u6B63\u786E\u5904\u7406\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5728\u6211\u4EEC\u540E\u7EED\u7684\u8BFE\u7A0B\u4E2D\uFF0C\u8FD8\u4F1A\u63A5\u89E6\u66F4\u591A\u7684html\u6807\u7B7E\uFF0C\u7EDD\u5927\u591A\u6570\u6807\u7B7E\u90FD\u662F\u6709\u7279\u5B9A\u7684\u8BED\u4E49\u7684\uFF0C\u5E0C\u671B\u5927\u5BB6\u5728\u4F7F\u7528\u5B83\u4EEC\u7684\u65F6\u5019\u9075\u5FAA\u5B83\u4EEC\u7684\u8BED\u4E49\uFF0C\u89C4\u8303\u4F7F\u7528\uFF0C\u8FD9\u6837\u624D\u80FD\u4E66\u5199\u51FA\u4F18\u79C0\u7684HTML\u6587\u6863\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h3", {
     "id": "小练习"
-  }, "\uD83D\uDC49\uD83C\uDFFB\u5C0F\u7EC3\u4E60"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u7F16\u5199\u535A\u5BA2\u7684\u5176\u4ED6\u9875\u9762"));
+  }, "\uD83D\uDC49\uD83C\uDFFB\u5C0F\u7EC3\u4E60"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u7F16\u5199\u535A\u5BA2\u7684\u5176\u4ED6\u9875\u9762"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'learn_html5'
+    },
+    next: {
+      name: '下一节',
+      src: 'learn_css'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -258,4 +270,4 @@ module.exports = __webpack_require__.p + "static/blog-index-933ee03d319978e1c706
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-用html组织博客内容-mdx-e514415286f0c1baf19d.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-用html组织博客内容-mdx-f940d4f478df64f66757.js.map

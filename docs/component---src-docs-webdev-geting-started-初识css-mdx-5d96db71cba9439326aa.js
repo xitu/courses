@@ -18,7 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/JCode */ "1aoM");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -29,6 +30,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -345,7 +347,17 @@ function MDXContent(_ref) {
   }, "\u53C2\u8003\u6587\u7AE0"), "\uFF0C\u5B66\u4E60\u5982\u4F55\u4F7F\u7528\u4F2A\u7C7B\u9009\u62E9\u5668\uFF0C\u5728\u4E0D\u4F7F\u7528class\u7684\u60C5\u51B5\u4E0B\u5BF9\u7B2C\u4E00\u4E2A\u6BB5\u843Dp\u5143\u7D20\u6307\u5B9A\u6837\u5F0F\u3002CSS\u7ED3\u6784\u4F2A\u7C7B\u9009\u62E9\u5668\u670912\u79CD\uFF0C\u4F60\u4E5F\u53EF\u4EE5\u901A\u8FC7\u9605\u8BFB\u8FD9\u7BC7", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("a", {
     parentName: "li",
     "href": "https://juejin.cn/post/7001869576069873695"
-  }, "\u6398\u91D1\u793E\u533A\u7684\u6587\u7AE0"), "\u6765\u7CFB\u7EDF\u5730\u4E86\u89E3\u5B83\u4EEC\u7684\u7528\u6CD5\u3002")));
+  }, "\u6398\u91D1\u793E\u533A\u7684\u6587\u7AE0"), "\u6765\u7CFB\u7EDF\u5730\u4E86\u89E3\u5B83\u4EEC\u7684\u7528\u6CD5\u3002")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'html_and_blog'
+    },
+    next: {
+      name: '下一节',
+      src: 'element_box'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -364,4 +376,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-初识css-mdx-145251499434e7ec982d.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-初识css-mdx-5d96db71cba9439326aa.js.map

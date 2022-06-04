@@ -18,7 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _Unsafe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Unsafe */ "wMQq");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -29,6 +30,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -60,7 +62,7 @@ function MDXContent(_ref) {
     "id": "设计简单的个人博客吧"
   }, "\u8BBE\u8BA1\u7B80\u5355\u7684\u4E2A\u4EBA\u535A\u5BA2\u5427"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "项目准备"
-  }, "\u9879\u76EE\u51C6\u5907"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u8981\u5EFA\u7ACB\u7684\u4E2A\u4EBA\u535A\u5BA2\u5F88\u7B80\u5355\uFF0C\u521D\u671F\u6211\u4EEC\u53EA\u5305\u542B\u9996\u9875\u3001\u6587\u7AE0\u9875\u3001\u4E2A\u4EBA\u7B80\u4ECB\u3001\u548C\u53CB\u60C5\u94FE\u63A5\u8FD94\u4E2A\u9875\u9762\u3002\b"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u5206\u522B\u770B\u4E00\u4E0B\u5B83\u4EEC\u7684\u4EA7\u54C1\u539F\u578B\u56FE\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("img", {
+  }, "\u9879\u76EE\u51C6\u5907"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u8981\u5EFA\u7ACB\u7684\u4E2A\u4EBA\u535A\u5BA2\u5F88\u7B80\u5355\uFF0C\u521D\u671F\u6211\u4EEC\u53EA\u5305\u542B\u9996\u9875\u3001\u6587\u7AE0\u9875\u3001\u4E2A\u4EBA\u7B80\u4ECB\u3001\u548C\u53CB\u60C5\u94FE\u63A5\u8FD94\u4E2A\u9875\u9762\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6211\u4EEC\u5206\u522B\u770B\u4E00\u4E0B\u5B83\u4EEC\u7684\u4EA7\u54C1\u539F\u578B\u56FE\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("img", {
     alt: "blog index",
     src: __webpack_require__(/*! ./public/blog-index.jpg */ "fvTB")
   })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("div", {
@@ -113,7 +115,17 @@ function MDXContent(_ref) {
   }, "Git\u6559\u7A0B"), "\u4E4B\u540E\u518D\u7EE7\u7EED\u672C\u8BFE\u7A0B\u7684\u5B66\u4E60\u3002\u719F\u7EC3\u4F7F\u7528Git\u51E0\u4E4E\u5DF2\u6210\u4E3A\u7A0B\u5E8F\u5458\u5FC5\u5907\u7684\u57FA\u672C\u529F\uFF0C\u524D\u7AEF\u5DE5\u7A0B\u5E08\u4E5F\u4E0D\u4F8B\u5916\u3002\u5F53\u7136\uFF0C\u5982\u679C\u4F60\u60F3\u5148\u7EE7\u7EED\u5B66\u4E60\u8BFE\u7A0B\uFF0C\u4EE5\u540E\u518D\u5B66\u4E60\u4F7F\u7528Git\uFF0C\u4F60\u4E5F\u53EF\u4EE5\u4E0D\u4F7F\u7528Git\uFF0C\u800C\u662F\u4F7F\u7528\u547D\u4EE4\u884C\u7EC8\u7AEF\u624B\u52A8\u521B\u5EFA\u4E0A\u9762\u7684\u76EE\u5F55\u548C\u6587\u4EF6\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u524D\u7AEF\u5F00\u53D1\u5BF9\u4E8E\u7F16\u8F91\u5668\u7684\u4F9D\u8D56\u5F88\u5C11\uFF0C\u4F60\u51E0\u4E4E\u53EF\u4EE5\u4F7F\u7528\u4EFB\u4F55\u652F\u6301unicode\u7684\u7F16\u8F91\u5668\u6765\u505A\u9879\u76EE\u5F00\u53D1\uFF0C\u4F46\u662F\uFF0C\u4E00\u6B3E\u597D\u7684\u7F16\u8F91\u5668\u4F9D\u7136\u80FD\u591F\u5927\u5927\u63D0\u5347\u5F00\u53D1\u6548\u7387\u3002\u5728\u540E\u7EED\u8BFE\u7A0B\u91CC\uFF0C\u6211\u4EEC\u4F1A\u9010\u6B65\u5F15\u5165\u4E00\u4E9B\u9884\u7F16\u8BD1\u3001\u89C4\u5219\u68C0\u67E5\u548C\u6253\u5305\u5DE5\u5177\uFF0C\u8FD9\u4E9B\u5DE5\u5177\u80FD\u591F\u62D3\u5C55\u6211\u4EEC\u7684\u5F00\u53D1\u80FD\u529B\u548C\u63D0\u5347\u5F00\u53D1\u6548\u7387\u3002\u4E00\u4E9B\u51FA\u8272\u7684\u7F16\u8F91\u5668\u63D0\u4F9B\u5FEB\u901F\u96C6\u6210\u8FD9\u4E9B\u5DE5\u5177\u7684\u63D2\u4EF6\u673A\u5236\uFF0C\u4F7F\u7528\u5B83\u4EEC\u80FD\u591F\u8BA9\u6211\u4EEC\u7684\u5F00\u53D1\u66F4\u52A0\u4FBF\u5229\u3002\u76EE\u524D\u5E38\u7528\u7684\u524D\u7AEF\u7F16\u8F91\u5668\u6709Sublime Text\u3001Atom\u3001WebStorm\u548CVisual Studio Code\u7B49\u7B49\uFF0C\u5728\u672C\u8BFE\u7A0B\u91CC\uFF0C\u6211\u4EEC\u9009\u62E9\u4F7F\u7528Visual Studio Code\u4F5C\u4E3A\u6211\u4EEC\u6559\u5B66\u6F14\u793A\u7684\u9ED8\u8BA4\u7F16\u8F91\u5668\uFF0C\u5982\u679C\u4F60\u5BF9\u7F16\u8F91\u5668\u6CA1\u6709\u7279\u6B8A\u7684\u504F\u597D\uFF0C\u6211\u63A8\u8350\u4F60\u4F7F\u7528Visual Studio Code\u4F5C\u4E3A\u9ED8\u8BA4\u7684\u524D\u7AEF\u5F00\u53D1\u7F16\u8F91\u5668\u3002Visual Studio Code\u662F\u5FAE\u8F6F\u63A8\u51FA\u7684\u5F00\u6E90\u7F16\u8F91\u5668\uFF0C\u4F60\u53EF\u4EE5\u5728", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("a", {
     parentName: "p",
     "href": "https://code.visualstudio.com/"
-  }, "\u8FD9\u91CC"), "\u4E0B\u8F7D\u548C\u514D\u8D39\u4F7F\u7528\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u4E0B\u8F7D\u5B89\u88C5\u597DVisual Studio Code\u540E\uFF0C\u70B9\u51FB\u83DC\u5355\u201C\u6253\u5F00\u6587\u4EF6\u5939\u201D\u5C06myblog\u6587\u4EF6\u5939\u6DFB\u52A0\u5230\u9879\u76EE\u8D44\u6E90\u4E2D\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5982\u679C\u4F60\u5DF2\u7ECF\u5B8C\u6210\u4E0A\u9762\u7684\u51C6\u5907\u5DE5\u4F5C\uFF0C\u90A3\u4E48\u6211\u60F3\u4F60\u4E5F\u8BB8\u5DF2\u7ECF\u8FEB\u4E0D\u53CA\u5F85\u60F3\u8981\u52A8\u624B\u521B\u5EFA\u5C5E\u4E8E\u4F60\u81EA\u5DF1\u7684\u535A\u5BA2\u4E86\u3002\u522B\u7740\u6025\uFF0C\u6211\u4EEC\u9A6C\u4E0A\u8FDB\u5165\u4E0B\u4E00\u8BFE\uFF0C\u5728\u4E0B\u4E00\u8BFE\u4E2D\uFF0C\u4F60\u5C31\u53EF\u4EE5\u4F7F\u7528\u6D4F\u89C8\u5668\u53EF\u8BC6\u522B\u7684\u8BED\u8A00\u2014\u2014HTML\u2014\u2014\u6765\u4E00\u6B65\u6B65\u52A8\u624B\u521B\u5EFA\u81EA\u5DF1\u7684\u535A\u5BA2\u5185\u5BB9\u4E86\u3002"));
+  }, "\u8FD9\u91CC"), "\u4E0B\u8F7D\u548C\u514D\u8D39\u4F7F\u7528\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u4E0B\u8F7D\u5B89\u88C5\u597DVisual Studio Code\u540E\uFF0C\u70B9\u51FB\u83DC\u5355\u201C\u6253\u5F00\u6587\u4EF6\u5939\u201D\u5C06myblog\u6587\u4EF6\u5939\u6DFB\u52A0\u5230\u9879\u76EE\u8D44\u6E90\u4E2D\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5982\u679C\u4F60\u5DF2\u7ECF\u5B8C\u6210\u4E0A\u9762\u7684\u51C6\u5907\u5DE5\u4F5C\uFF0C\u90A3\u4E48\u6211\u60F3\u4F60\u4E5F\u8BB8\u5DF2\u7ECF\u8FEB\u4E0D\u53CA\u5F85\u60F3\u8981\u52A8\u624B\u521B\u5EFA\u5C5E\u4E8E\u4F60\u81EA\u5DF1\u7684\u535A\u5BA2\u4E86\u3002\u522B\u7740\u6025\uFF0C\u6211\u4EEC\u9A6C\u4E0A\u8FDB\u5165\u4E0B\u4E00\u8BFE\uFF0C\u5728\u4E0B\u4E00\u8BFE\u4E2D\uFF0C\u4F60\u5C31\u53EF\u4EE5\u4F7F\u7528\u6D4F\u89C8\u5668\u53EF\u8BC6\u522B\u7684\u8BED\u8A00\u2014\u2014HTML\u2014\u2014\u6765\u4E00\u6B65\u6B65\u52A8\u624B\u521B\u5EFA\u81EA\u5DF1\u7684\u535A\u5BA2\u5185\u5BB9\u4E86\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'what_is_fe'
+    },
+    next: {
+      name: '下一节',
+      src: 'learn_html5'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -176,4 +188,4 @@ module.exports = __webpack_require__.p + "static/blog-index-933ee03d319978e1c706
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-设计简单的个人博客吧-mdx-af0f3f32f372202c2346.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-设计简单的个人博客吧-mdx-104e36867bf010207f9f.js.map

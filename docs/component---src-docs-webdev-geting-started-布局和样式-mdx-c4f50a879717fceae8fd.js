@@ -40,7 +40,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/JCode */ "1aoM");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -51,6 +52,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -451,7 +453,17 @@ function MDXContent(_ref) {
     parentName: "ul"
   }, "\u9ED8\u8BA4\u6587\u6863\u6D41\uFF1A \u662F\u6309\u7167\u5143\u7D20\u7684\u7C7B\u578B\uFF0C\u4ECE\u4E0A\u5230\u4E0B\uFF0C \u4ECE\u5DE6\u5230\u53F3\u6392\u5217\uFF1B"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
     parentName: "ul"
-  }, "\u4EE5\u53CA\u8BBE\u7F6Eposition\u5C5E\u6027\u4F7F\u5F97\u5143\u7D20\u8131\u79BB\u6587\u6863\u6D41\u3002 ")));
+  }, "\u4EE5\u53CA\u8BBE\u7F6Eposition\u5C5E\u6027\u4F7F\u5F97\u5143\u7D20\u8131\u79BB\u6587\u6863\u6D41\u3002 ")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'display_attribute'
+    },
+    next: {
+      name: '下一节',
+      src: 'javascript_in_page'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -525,4 +537,4 @@ module.exports = __webpack_require__.p + "static/index-stick-footer2-5b068dd88e1
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-布局和样式-mdx-aaa3eea046413e9e44bb.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-布局和样式-mdx-c4f50a879717fceae8fd.js.map

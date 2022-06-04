@@ -40,7 +40,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/JCode */ "1aoM");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -51,6 +52,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -227,7 +229,17 @@ function MDXContent(_ref) {
     parentName: "ul"
   }, "width = content.width + \u5DE6\u53F3padding + \u5DE6\u53F3border"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
     parentName: "ul"
-  }, "height = content.height + \u4E0A\u4E0Bpadding + \u4E0A\u4E0Bborder")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "box-sizing\u5C5E\u6027\u53EF\u4EE5\u6539\u53D8\u5143\u7D20\u7684\u76D2\u6A21\u578B\u3002"));
+  }, "height = content.height + \u4E0A\u4E0Bpadding + \u4E0A\u4E0Bborder")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "box-sizing\u5C5E\u6027\u53EF\u4EE5\u6539\u53D8\u5143\u7D20\u7684\u76D2\u6A21\u578B\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'learn_css'
+    },
+    next: {
+      name: '下一节',
+      src: 'display_attribute'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -290,4 +302,4 @@ module.exports = __webpack_require__.p + "static/margin-padding-d76ece329e29c697
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-元素盒子-mdx-0c9d69ee975235e16890.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-元素盒子-mdx-68807b94d58eba8a4093.js.map

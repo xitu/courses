@@ -39,7 +39,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -50,6 +51,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -175,7 +177,13 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "master branch"), "\uFF0C\u7136\u540E\u70B9\u540E\u9762\u7684save\u6309\u94AE\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u4FDD\u5B58\u5B8C\u6210\u4E4B\u540E\uFF0C\u901A\u8FC7\u6D4F\u89C8\u5668\u8BBF\u95EE", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
-  }, "https://username.github.io/blog/"), "\u5C31\u80FD\u6253\u5F00\u4F60\u7684\u535A\u5BA2\u7F51\u9875\u4E86\uFF0C\u5176\u4E2Dusername\u66FF\u6362\u6210\u4F60\u7684GitHub\u8D26\u53F7\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5230\u73B0\u5728\uFF0C\u672C\u8BFE\u7A0B\u7684\u5185\u5BB9\u57FA\u672C\u4E0A\u7ED3\u675F\u4E86\uFF0C\u901A\u8FC7\u5B66\u4E60\u8BFE\u7A0B\uFF0C\u6211\u4EEC\u4E86\u89E3\u4E86\u4F7F\u7528\u57FA\u672C\u7684HTML\u3001CSS\u3001JavaScript\u8FDB\u884C\u524D\u7AEF\u5F00\u53D1\uFF0C\u5B9E\u73B0\u4E00\u4E2A\u7B80\u5355\u7684\u535A\u5BA2\u662F\u4E00\u4E2A\u600E\u6837\u7684\u8FC7\u7A0B\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5982\u679C\u4F60\u4ECE\u5934\u5F00\u59CB\u8DDF\u968F\u6211\u4EEC\u7684\u8BFE\u7A0B\u5B8C\u6210\u4E86\u4F60\u7684\u535A\u5BA2\uFF0C\u8BF7\u4F60\u5728\u6211\u4EEC\u7684\u9879\u76EE\u4ED3\u5E93\u4E2D\u53D1\u5E03issue\uFF0C\u63D0\u4EA4\u4F60\u7684\u535A\u5BA2\u5730\u5740\u3002"));
+  }, "https://username.github.io/blog/"), "\u5C31\u80FD\u6253\u5F00\u4F60\u7684\u535A\u5BA2\u7F51\u9875\u4E86\uFF0C\u5176\u4E2Dusername\u66FF\u6362\u6210\u4F60\u7684GitHub\u8D26\u53F7\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5230\u73B0\u5728\uFF0C\u672C\u8BFE\u7A0B\u7684\u5185\u5BB9\u57FA\u672C\u4E0A\u7ED3\u675F\u4E86\uFF0C\u901A\u8FC7\u5B66\u4E60\u8BFE\u7A0B\uFF0C\u6211\u4EEC\u4E86\u89E3\u4E86\u4F7F\u7528\u57FA\u672C\u7684HTML\u3001CSS\u3001JavaScript\u8FDB\u884C\u524D\u7AEF\u5F00\u53D1\uFF0C\u5B9E\u73B0\u4E00\u4E2A\u7B80\u5355\u7684\u535A\u5BA2\u662F\u4E00\u4E2A\u600E\u6837\u7684\u8FC7\u7A0B\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u5982\u679C\u4F60\u4ECE\u5934\u5F00\u59CB\u8DDF\u968F\u6211\u4EEC\u7684\u8BFE\u7A0B\u5B8C\u6210\u4E86\u4F60\u7684\u535A\u5BA2\uFF0C\u8BF7\u4F60\u5728\u6211\u4EEC\u7684\u9879\u76EE\u4ED3\u5E93\u4E2D\u53D1\u5E03issue\uFF0C\u63D0\u4EA4\u4F60\u7684\u535A\u5BA2\u5730\u5740\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_5__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'javascript_in_page'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -304,4 +312,4 @@ module.exports = __webpack_require__.p + "static/github-pages-settings-566b94170
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-发布你的博客作品-mdx-53163099331b61322e9f.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-发布你的博客作品-mdx-340cb1f2394cce0a027d.js.map

@@ -51,7 +51,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/JCode */ "1aoM");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -62,6 +63,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -221,7 +223,17 @@ function MDXContent(_ref) {
     parentName: "ul"
   }, "display: inline \u5C06\u5143\u7D20\u8BBE\u7F6E\u4E3A\u884C\u5185\u5143\u7D20"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
     parentName: "ul"
-  }, "display: inline-block \u5C06\u5143\u7D20\u8BBE\u7F6E\u4F4D\u884C\u5185\u5757\u5143\u7D20")));
+  }, "display: inline-block \u5C06\u5143\u7D20\u8BBE\u7F6E\u4F4D\u884C\u5185\u5757\u5143\u7D20")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'element_box'
+    },
+    next: {
+      name: '下一节',
+      src: 'layout_and_styles'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -251,4 +263,4 @@ module.exports = __webpack_require__.p + "static/h1-devtool-marked-64e42c2a28380
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-display属性-mdx-65eb3d90f822e06d62b6.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-display属性-mdx-49695fca6d4cc11c2a52.js.map

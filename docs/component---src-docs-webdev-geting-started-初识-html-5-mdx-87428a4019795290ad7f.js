@@ -18,7 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "/FXl");
 /* harmony import */ var _Users_wuliang_WorkSpace_localized_courses_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "TjRS");
 /* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/JCode */ "1aoM");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/pagination */ "AUG3");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "aD51");
 
 
 var _excluded = ["components"];
@@ -29,6 +30,7 @@ var _excluded = ["components"];
 /* @jsxRuntime classic */
 
 /* @jsx mdx */
+
 
 
 
@@ -308,7 +310,17 @@ function MDXContent(_ref) {
     parentName: "ol"
   }, "\u5176\u4E2D\u81EA\u95ED\u5408\u6807\u7B7E\u6709\u54EA\u4E9B\uFF1F"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
     parentName: "ol"
-  }, "\u54EA\u4E9B\u5143\u7D20\u5E26\u6709\u5B50\u5143\u7D20\uFF0C\u5B83\u4EEC\u7684\u6807\u7B7E\u5206\u522B\u662F\uFF1F")));
+  }, "\u54EA\u4E9B\u5143\u7D20\u5E26\u6709\u5B50\u5143\u7D20\uFF0C\u5B83\u4EEC\u7684\u6807\u7B7E\u5206\u522B\u662F\uFF1F")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_pagination__WEBPACK_IMPORTED_MODULE_6__["Pagination"], {
+    previous: {
+      name: '上一节',
+      src: 'design_a_blog'
+    },
+    next: {
+      name: '下一节',
+      src: 'html_and_blog'
+    },
+    mdxType: "Pagination"
+  }));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -360,4 +372,4 @@ module.exports = __webpack_require__.p + "static/html-tag-f0b0f9b72057149d97c31f
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-初识-html-5-mdx-2e1fa77b3fb28f5a77db.js.map
+//# sourceMappingURL=component---src-docs-webdev-geting-started-初识-html-5-mdx-87428a4019795290ad7f.js.map
