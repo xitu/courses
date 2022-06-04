@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-webdev-geting-started-布局和样式-mdx"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["component---src-docs-algorithm-index-mdx"],{
 
-/***/ "MGD0":
-/*!***************************************************!*\
-  !*** ../src/docs/webdev/geting_started/布局和样式.mdx ***!
-  \***************************************************/
+/***/ "ASFO":
+/*!***************************************!*\
+  !*** ../src/docs/algorithm/index.mdx ***!
+  \***************************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,7 +38,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "src/docs/webdev/geting_started/\u5E03\u5C40\u548C\u6837\u5F0F.mdx"
+      filename: "src/docs/algorithm/index.mdx"
     }
   });
 }
@@ -56,7 +56,9 @@ function MDXContent(_ref) {
     mdxType: "MDXLayout"
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     "className": "hint error"
-  }, "This document is a Work in Progress."));
+  }, "This document is a Work in Progress."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", {
+    "id": "算法"
+  }, "\u7B97\u6CD5"));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -64,7 +66,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "src/docs/webdev/geting_started/\u5E03\u5C40\u548C\u6837\u5F0F.mdx"
+      filename: "src/docs/algorithm/index.mdx"
     }
   });
 }
@@ -75,4 +77,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-webdev-geting-started-布局和样式-mdx-ac4d8197077876d3df1f.js.map
+//# sourceMappingURL=component---src-docs-algorithm-index-mdx-6b86f5d134ff0bf24757.js.map
