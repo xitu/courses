@@ -353,3 +353,10 @@ a {
 浏览器会将链接的颜色变为桔色吗？如果能，为什么？如果不能，应该怎么做才能？
 
 3. 我们通过`.first-para`的class来给第一个段落p元素指定样式，这是最简单直接的方式，也是常用的一种方式。但是，在CSS选择器中有一类表示位置的伪类选择器，我们也可以通过它们，在不给p元素添加class的情况下对第一个段落p元素应用样式，你可以阅读来自MDN的[参考文章](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-of-type)，学习如何使用伪类选择器，在不使用class的情况下对第一个段落p元素指定样式。CSS结构伪类选择器有12种，你也可以通过阅读这篇[掘金社区的文章](https://juejin.cn/post/7001869576069873695)来系统地了解它们的用法。
+
+import {Pagination} from '@/pagination'
+
+<Pagination
+  previous={{name: '上一节', src: 'html_and_blog'}}
+  next={{name: '下一节', src: 'element_box'}}
+/>
