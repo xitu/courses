@@ -3,7 +3,353 @@ name: 初识CSS
 route: /webdev/getting_started_fe/learn_css
 menu: Web开发
 submenu: 零基础前端入门
-WIP: true
 ---
 
-x> This document is a Work in Progress.
+import {JCode} from '@/JCode'
+
+# 初识CSS
+
+## 什么是CSS
+
+**CSS**是层叠样式表 (Cascading Style Sheets）的缩写，它是一种用来描述 HTML或XML文档呈现形式的语言。CSS描述了在屏幕、纸质、音频等多种媒体上的元素应该如何被渲染。
+
+### CSS的基本语法
+
+一个页面的CSS由若干条**规则**组成，每一条规则包括**选择器**和**声明块**。
+
+看一个例子：
+
+```css
+body {
+  background-color: black;
+  color: white;
+}
+```
+
+上面的代码，是一条CSS规则。写在花括号前面的内容，叫选择器。
+
+选择器决定该规则作用于哪些HTML元素。
+
+这里的选择器是`body`，表示该规则作用于网页上的body元素。
+
+选择器后面是一段被一对花括号`{}`包裹的内容，这些内容由若干条被冒号`:`分割的**声明**构成，每条声明以分号`;`结尾。
+
+声明里冒号前面的部分是属性，表示要设置元素的哪一个属性。CSS可以设置的属性很多，包括元素的背景、字体、大小、位置、边框以及动画效果等等。在例子里，属性`background-color`表示设置元素的背景颜色，属性`color`表示设置元素的文字颜色。
+
+声明里冒号后面的部分是属性值，表示该属性要设置为哪个值。在例子里，我们将属性`background-color`的值设置为`black`表示黑色，将属性`color`的值设为`white`表示白色。
+
+这样，整条CSS规则的意思是：**将页面上的body元素的背景色设置为黑色，文字颜色设置为白色。**
+
+### 加载CSS
+
+写好了CSS规则，我们要将它加载到页面上。
+
+在网页中，加载CSS的方式有3种：
+
+- 第一种是嵌入：这种方式是把样式直接写在style标签里。
+
+  ```html
+  <html>
+    <head>
+      ...
+      <style>
+        body {
+          background-color: black;
+          color: white;
+        }    
+      </style>
+    </head>
+    <body>
+      ....
+    </body>
+  </html>
+  ```
+  
+  以嵌入方式写CSS样式，推荐将style标签写在所有可呈现元素的前面，所以我们一般写在head里。
+
+- 第二种是外链。这种方式 是把css写在单独的文件中，通过link标签，把css文件加载进来。
+
+  ```html
+  <html>
+    <head>
+      ...
+      <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+      ....
+    </body>
+  </html>
+  ```
+
+  我们可以通过`link`标签让浏览器加载外部的CSS文件。同样，`link`标签也推荐写在head里。
+
+- 第三种方法是内联。内联是直接把样式声明写在元素的style属性里。
+
+  ```html
+  <html>
+    <head>
+      ...
+    </head>
+    <body style="background-color: black; color: white">
+      ....
+    </body>
+  </html>
+  ```
+
+在这三种加载CSS的方式里，最推荐的是第二种方式，因为这种方式将CSS和HTML完全分开，有利于代码维护。
+
+!> 一般情况下，我们不推荐使用第三种方式加载CSS，因为这种方式将HTML和CSS完全混在一起，破坏了CSS的独立性，也不便于规则的复用。
+
+为了学习和演示方便，本课程采用第一种方式加载，也就是直接将CSS嵌入在style标签里。
+
+如下面的例子，我们将前面写的CSS规则通过内嵌style标签的方式添加到网页代码里：
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>我的第一个网页</title>
+    <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>稀土教程</h1>
+    <img src="https://s1.ssl.qhres2.com/static/14a7d288e11f8022.svg" alt="稀土掘金">
+    <p>欢迎来到稀土教程，在这里，我们为你准备了由浅入深的<em>Web开发课程</em>。</p>
+    <h2>第3课</h2>
+    <p>要进入Web开发的世界，要做的第一件事是了解Web开发的语言。我们从<a href="https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML">HTML</a>开始入手，HTML是浏览器能够识别的“第一语言”。</p>
+  </body>
+</html>
+```
+
+通过[码上掘金](https://code.juejin.cn)，可以看到整个网页从之前的白底黑字，变成了黑底白字。
+
+<JCode codeId="7105205999430008840"/>
+
+我们看到，浏览器对不同标签默认的呈现方式被我们定义的CSS覆盖，使网页效果按照我们的需求（即：白底黑字）展现出来。
+
+### 属性的继承
+
+元素的一些CSS属性是有继承关系的，有继承关系的属性被称为**可继承属性**。color属性就是一个可继承属性。还记得前面的课程里我们说过HTML文档结构是树状结构，元素之间有嵌套关系。可继承属性是指如果我们在外层元素上设置了这个样式属性，内层没有设置该属性的元素都会**自动继承**该属性。比如我们给body设置了color为白色，它内层的h1、h2、p、em等标签我们没有设置color，但是它们自动继承了body设置的color，于是也成为了白色。
+
+与之不同的是，**不可继承属性**是指设置在外层元素的属性不会影响没有设置该属性的内层元素的显示效果。比如backgroud-color就是是一个不可继承的属性，我们给body设置了background-color为黑色，并不会将它内层元素的background-color也设置为黑色。这里我们看到整个页面都成为黑色，是因为body刚好占据整个页面，而其他没有设置background-color的元素默认的背景是透明色，所以看起来好像是它们一起变黑了。在后面，我们会接触到更多的例子来说明可继承属性和不可继承属性的不同。
+
+下面我们再来做一个简单的修改，我们给第一段文字单独设置一个color为红色：
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>我的第一个网页</title>
+    <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    p.first-para {
+      color: red;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>稀土教程</h1>
+    <img src="https://s1.ssl.qhres2.com/static/14a7d288e11f8022.svg" alt="稀土掘金">
+    <p class="first-para">欢迎来到稀土教程，在这里，我们为你准备了由浅入深的<em>Web开发课程</em>。</p>
+    <h2>第3课</h2>
+    <p>要进入Web开发的世界，要做的第一件事是了解Web开发的语言。我们从<a href="https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML">HTML</a>开始入手，HTML是浏览器能够识别的“第一语言”。</p>
+  </body>
+</html>
+```
+
+在这里，我们做了两件事情：
+
+首先我们给`<style>`标签里面增加了一段新的CSS规则：
+
+```css
+p.first-para {
+  color: red;
+}
+```
+
+我们没有直接使用p作为选择器，而是给p后面增加了一串`.first-para`，这个在css中叫做**类选择器**。我们之所以这么做，是因为我们的页面上有两个p元素，而我们只想让这个新的规则**命中**其中的一个p元素。
+
+于是，对应的，我们给第一个p元素增加了一个class属性：`class="first-para"`。这个选择器表示选择class=first-para的p元素，也就是命中了页面上的第一个p元素，于是我们看到的网页内容就变成如下图所示：
+
+<JCode codeId="7105207307516477471"/>
+
+注意到不仅p元素的文字变成红色，其中的子元素em(`<em>Web开发</em>`)也变成了红色，这再一次印证了CSS属性color是可继承属性这一事实。
+
+最后，我们再了解一下，为什么`<a>`元素中的文字没有随着body的文字颜色变成白色。这是因为CSS属性继承的条件是子元素的属性**没有**被设置。默认情况下， 浏览器已经为`<a>`元素的color属性设置了默认的值。这个默认值覆盖了`<body>`的color属性设置， 所以`<a>`元素就不会被`<body>`的color属性影响了。
+
+### 状态的选择器——伪类
+
+`<a>`标签表示链接，在网页中，一个链接中的文字有四种状态：
+- 第一种状态是默认（link）状态，对应用户访问网页时，还未点击过该链接文字。
+- 第二种状态是悬停（hover）状态，对应用户使用鼠标悬停在该链接的文字上时。
+- 第三种状态是激活（active）状态，对应用户正在点击链接文字的一瞬间（比如鼠标按下或触屏中）。
+- 第四种状态是已访问过（visited）状态，对应用户已访问过该链接文字。
+
+浏览器默认将link状态文字颜色默认设为蓝色，将hover状态文字颜色默认设为与link状态颜色相同，将active状态文字颜色默认设为红色，将visited状态文字颜色默认设为紫色。
+
+我们可以通过CSS修改链接的这四种状态的默认颜色，如下代码所示：
+
+```css
+a:link {
+  color: white;
+}
+a:hover {
+  color: green;
+}
+a:active {
+  color: orange;
+}
+a:visited {
+  color: yellow;
+}
+```
+
+这里我们看到与前面不同的一种选择器，它以冒号`:`开头，表示元素的某种状态。这样的选择器被称为**伪类选择器**（pseudo-class）。
+
+最终效果如下：
+
+<JCode codeId="7105208174008860708"/>
+
+好了，我们来总结一下这节课里出现的三种选择器，我们先回顾一下刚才我们写过的所有的CSS规则：
+
+```css
+body {
+  background-color: black;
+  color: white;
+}
+p.first-para {
+  color: red;
+}
+a:link {
+  color: white;
+}
+a:hover {
+  color: green;
+}
+a:active {
+  color: orange;
+}
+a:visited {
+  color: yellow;
+}
+```
+
+上面的代码里一共有6个CSS规则，每个规则都有选择器，按照类型划分一共有三类选择器。
+
+第一类选择器是`body`、`p`、`a`这样的选择器，它们叫做**元素选择器**，表示选择某种类型（即某种标签）的元素。`body`选择网页里所有的body元素（一个网页只有一个body元素），`p`选择网页里所有的p元素，`a`选择网页里所有的a元素。
+
+第二类选择器是`.first-para`这样的选择器，它叫做**类选择器**，表示选择某个拥有特定的`class`属性的元素。
+
+第三类选择器是`:link`、`:active`这样的选择器，它们叫做**伪类(pseudo-class)**，表示选择元素的某个特定状态。
+
+注意CSS的选择器是可以组合的，比如上面代码的第二条规则里，`p.first-para`——组合了一个元素选择器和一个类选择器。该选择器表示选中页面上所有带有`class`属性且`class`属性值为`first-para`的P元素。同样，在规则3-6里，我们组合了元素选择器`a`和伪类。我们还可以组合更多的选择器以匹配更复杂的规则，例如：`a.myclass:visited`表示选择页面上所有`class="myclass"`且状态为`visited`的a元素。
+
+元素选择器、类选择器和伪类是三种常用的CSS选择器，此外，CSS还有许多其它类型的选择器，而组合选择器的规则也可以更加复杂。在本课程里，不打算全面介绍这些内容，在后续的课程里，随着学习和实践的深入，我们会逐步讲解CSS更深入的内容。如果你希望先对CSS有更全面的了解，可以阅读[MDN CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)以获得更丰富的知识内容。
+
+## “层叠”与优先级
+
+CSS规则根据选择器匹配范围来**命中**元素，页面上的一个元素很可能被多个CSS规则所命中。此时，如果这些命中的规则涉及的属性不重复，那么它们会被**层层叠加**设置到该元素上。如果这些命中的规则涉及的属性重复，那么其中一条**优先级**最高的规则所涉及的属性将被设置到该元素上。
+
+![xxx](http://res.junyux.com/images/course1/css1.jpg)
+
+CSS的优先级是由属性的**重要性**、选择器的**专用性**和规则书写的**次序**依次决定，在这里我们不打算全面介绍，只先大致了解：
+
+1. 如果没有特殊声明（特殊声明在后续课程中介绍）我们设置的普通CSS属性的重要性一般来说是相同的。
+
+2. 选择器的专用性中，类选择器和伪类的专用性相同，它们高于元素选择器的专用性。在CSS规则的组合选择器中，选择器的专用性越高，优先级越高；当选择器的专用性一样时，选择器数量越多，优先级越高。
+
+因此上图中的例子，选择器优先级排序从高到低为：
+
+1. `a.friends:link`（1个伪类+1个类选择器+1个元素选择器）
+2. `a.friends` (0个伪类+1个类选择器+1个元素选择器)
+3. `a` (0个伪类+0个类选择器+1个元素选择器)
+
+如果选择器的重要性和专用性相同，代码中后出现的规则优先级更高，因此如果以下两条规则应用于`<a class="friends">Link</a>`：
+
+```css
+a:link {
+  color: red;
+}
+a.friends {
+  color: green;
+}
+```
+
+由于`a:link`和`a.friends`前者由一个元素选择器和一个伪类组成，后者由一个元素选择器和一个类选择器组成，它们的专用性比较结果是相同的，但由于`a.friends`在代码中出现的位置晚于`a:link`，因此最终规则应用后，`<a class="friends">Link</a>`的文字颜色是绿色。
+
+CSS选择器优先级是CSS非常重要的概念，在后续课程里我们还会通过实战深入学习。如果你想要先对完整规则有一个比较全面的了解，可以阅读[MDN CSS相关内容](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance)。
+
+## 小结
+
+这一讲主要介绍了：
+- 什么是CSS
+- CSS的规则的基本书写语法
+- 可继承和非可继承的属性
+- CSS规则的叠加和优先级
+
+下一讲，我将介绍CSS另一个非常重要的概念-盒模型。
+
+### 👉🏻 小练习
+
+回到我们的例子页面，回答几个问题：
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>我的第一个网页</title>
+    <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    p.first-para {
+      color: red;
+    }
+    a:link {
+      color: white;
+    }
+    a:hover {
+      color: green;
+    }
+    a:active {
+      color: orange;
+    }
+    a:visited {
+      color: yellow;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>稀土教程</h1>
+    <img src="https://s1.ssl.qhres2.com/static/14a7d288e11f8022.svg" alt="稀土掘金">
+    <p class="first-para">欢迎来到稀土教程，在这里，我们为你准备了由浅入深的<em>Web开发课程</em>。</p>
+    <h2>第3课</h2>
+    <p>要进入Web开发的世界，要做的第一件事是了解Web开发的语言。我们从<a href="https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML">HTML</a>开始入手，HTML是浏览器能够识别的“第一语言”。</p>
+  </body>
+</html>
+```
+
+1. 如果我们要将两个p元素的文字颜色都设置为红色，应该怎么修改上面的CSS规则？
+2. 如果我们添加以下CSS规则：
+
+```css
+a {
+  color: orange;
+}
+```
+
+浏览器会将链接的颜色变为桔色吗？如果能，为什么？如果不能，应该怎么做才能？
+
+3. 我们通过`.first-para`的class来给第一个段落p元素指定样式，这是最简单直接的方式，也是常用的一种方式。但是，在CSS选择器中有一类表示位置的伪类选择器，我们也可以通过它们，在不给p元素添加class的情况下对第一个段落p元素应用样式，你可以阅读来自MDN的[参考文章](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-of-type)，学习如何使用伪类选择器，在不使用class的情况下对第一个段落p元素指定样式。CSS结构伪类选择器有12种，你也可以通过阅读这篇[掘金社区的文章](https://juejin.cn/post/7001869576069873695)来系统地了解它们的用法。
