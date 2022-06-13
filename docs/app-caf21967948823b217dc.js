@@ -11833,7 +11833,9 @@ var scope_6 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scop
 
 var scope_7 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js */ "JTKy").default;
 
-var __DOCZ_DUMMY_EXPORT_DEFAULT = Object.assign({}, scope_0, scope_1, scope_2, scope_3, scope_4, scope_5, scope_6, scope_7);
+var scope_8 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/ecc7a8cc36c210dc87ab8f78f16decd4.js */ "lLvY").default;
+
+var __DOCZ_DUMMY_EXPORT_DEFAULT = Object.assign({}, scope_0, scope_1, scope_2, scope_3, scope_4, scope_5, scope_6, scope_7, scope_8);
 
 /* harmony default export */ __webpack_exports__["default"] = (__DOCZ_DUMMY_EXPORT_DEFAULT);
 
@@ -29396,6 +29398,24 @@ var createCache = function createCache(options) {
 
 /***/ }),
 
+/***/ "lLvY":
+/*!********************************************************************************************!*\
+  !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/ecc7a8cc36c210dc87ab8f78f16decd4.js ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _JCode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/JCode */ "1aoM");
+/* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! docz */ "ZFoC");
+/* harmony import */ var _Tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Tabs */ "O7Kf");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "mXGw");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony default export */ __webpack_exports__["default"] = ({JCode:_JCode__WEBPACK_IMPORTED_MODULE_0__["JCode"],Playground:docz__WEBPACK_IMPORTED_MODULE_1__["Playground"],Tabs:_Tabs__WEBPACK_IMPORTED_MODULE_2__["Tabs"],React:react__WEBPACK_IMPORTED_MODULE_3__});
+
+/***/ }),
+
 /***/ "lYsT":
 /*!*********************************************!*\
   !*** ../node_modules/lodash/isArguments.js ***!
@@ -35086,4 +35106,4 @@ module.exports = function (object, key, value) {
 /***/ })
 
 },[["UxWs","webpack-runtime","framework","styles","06447f4e","f7728127"]]]);
-//# sourceMappingURL=app-6664dd02c3aa5d148e84.js.map
+//# sourceMappingURL=app-caf21967948823b217dc.js.map
