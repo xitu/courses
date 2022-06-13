@@ -3,10 +3,116 @@ name: 基本类型-Number
 route: /js/basic/number
 menu: JavaScript
 submenu: JS基础
-WIP: true
 ---
 
-x> This document is a Work in Progress.
+import {JCode} from '@/JCode'
+import {Playground} from 'docz'
 
-# 数值
+# Number类型
 
+JavaScript用Number来统一表示整数和浮点数。根据规范，JavaScript的Number是符合[IEEE 754标准](https://baike.baidu.com/item/IEEE%20754)的64位浮点数。
+
+
+import {Tabs} from '@/Tabs';
+
+<Tabs activeId="1" minHeight="180px">
+  <Tabs.Tab id="1" title="参考资料📖">{`
+    ${__list([
+      ['数据类型-Number',
+       'Number 类型使用 IEEE 754 格式表示整数和浮点值(在某些语言中也叫双精度值)。',
+       'https://juejin.cn/post/7088697590279045150',
+       '前端_我不李姐'
+      ]
+    ])}
+    <div class="more"><a href="https://juejin.cn/search?query=Number" target="_blank">👉🏻 更多内容📚</a></div>
+  `}</Tabs.Tab>
+  <Tabs.Tab id="2" title="练习题📝">{
+    __list([
+      ['练习',
+       '我们在码上掘金上试试看。',
+       'https://code.juejin.cn'
+      ],
+    ])
+  }</Tabs.Tab>
+  <Tabs.Tab id="3" title="交流讨论🔥">{
+    __list([
+      ['交流讨论',
+       '来沸点交流讨论吧💬',
+       'https://juejin.cn/pins/club/6824710202655244301'
+      ],
+    ])
+  }</Tabs.Tab>
+</Tabs>
+
+
+## 整数
+
+整数可以有二进制、八进制、十进制和十六进制表示法，还可以使用科学计数法。
+
+```js
+0
+7
+-3
+0b101  // 二进制表示的5，0b前缀表示二进制
+0o777  // 八进制表示的511，0o前缀表示八进制
+-0x7f   // 十六进制表示的-127，0x前缀表示十六进制
+3e9    // 科学计数法表示3000000000
+```
+
+根据规范，JavaScript可以**精确**表示的整数范围从$-2^{53}+1$到$2^{53}-1$，即-9007199254740991到9007199254740991，超过这个范围的整数，无法保证低位数字的精度。在ES5中，预先定义了一个常量`Number.MAX_SAFE_INTEGER`，它的值正好是9007199254740991。`Number.isSafeInteger(n)`用来检查一个值是否是`-Number.MAX_SAFE_INTEGER`到`Number.MAX_SAFE_INTEGER`之间的整数。
+
+<JCode codeId="7108539767356129287"/>
+
+超过9007199254740991的整数并不是不能表示，而是会丢失精度，例如：
+
+<JCode codeId="7108548926332108837"/>
+
+## 浮点数
+
+浮点数可以表示小数。规范规定浮点数的整数部分如果是0，0可以省略。浮点数也可以使用科学计数法。
+
+```js
+.3 //相当于0.3
+3.14159265
+6.62e-34 
+```
+
+根据规范，浮点数能表示的最大值是1.7976931348623157e+308，用`Number.MAX_VALUE`表示，这意味着JavaScript的数值范围从-1.7976931348623157e+308到+1.7976931348623157e+308。大于`Number.MAX_VALUE`的值，在JavaScript里用一个特殊的符号Infinity表示，同样，小于`-Number.MAX_VALUE`的值表示成-Infinity。
+
+<JCode codeId="7108560210805030942"/>
+
+根据规范，浮点数能表示的最接近于0的值是5e-324，这个值用`Number.MIN_VALUE`表示。另外，浮点数所能表示的精度是2.220446049250313e-16，用`Number.EPSILON`常量表示。浮点数精度的意思是在表达式运算中能够保证计算出差别。
+
+!> 换一个说法是： Number.MIN_VALUE是最小的数， 而精度(Number.EPSILON)是能够判断出不相等的最小误差
+
+<JCode codeId="7108560773164564494"/>
+
+IEEE 754标准的浮点数表示法本身有精度限制，所以才有了`Number.EPSILON`，我们在JavaScript中进行浮点运算时也会碰到精度问题：
+
+<JCode codeId="7108561232612818951"/>
+
+所以我们比较浮点数时，不能直接使用相等进行比较，必须使用精度来比较：
+
+<JCode codeId="7108561526969073695"/>
+
+## NaN
+
+符号`NaN`也是Number类型的一个特殊值，它表示"Not-a-Number"。在计算的过程中，遇到无法表示为数值的情况，计算结果就会是`NaN`。
+
+!> 两种情况导致javascript运算时会出现NaN的结果， 如下例子所示：
+
+<JCode codeId="7108562003358121991"/>
+
+`NaN`是一个很特殊的值，一般我们对数值是可以做相等比较的，但是如果两个数值是`NaN`，它们的比较结果是不等的：
+
+<JCode codeId="7108562354614304781"/>
+
+所以要判断一个结果是否是`NaN`，不能通过`== NaN`来进行判断。JavaScript提供了`Number.isNaN`来进行判断：
+
+<JCode codeId="7108562962247319582"/>
+
+## +0和-0
+
+JavaScript的数值0有`+0`和`-0`两种形态，这两个值如果比较的话是相等的。但是如果它们作为除数进行运算，分别会得到`+Infinity`和`-Infinity`。同样，如果一个有限的正数，分别除以`+Infinity`和`-Infinity`就会分别得到`+0`和`-0`：
+
+<JCode codeId="7108563295614795812"/>
