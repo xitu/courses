@@ -12,7 +12,7 @@ export const JCode = (props, ref) => {
 
   return (
     <iframe src={source}
-      scrolling="yes"
+      scrolling="no"
       style={iframeStyle}
       title="jcode"
     ></iframe>
