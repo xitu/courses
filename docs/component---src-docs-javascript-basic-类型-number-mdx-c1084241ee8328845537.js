@@ -322,13 +322,19 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "-Number.MAX_SAFE_INTEGER"), "\u5230", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
-  }, "Number.MAX_SAFE_INTEGER"), "\u4E4B\u95F4\u7684\u6574\u6570\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
-    codeId: "7108539767356129287",
-    mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u8D85\u8FC79007199254740991\u7684\u6574\u6570\u5E76\u4E0D\u662F\u4E0D\u80FD\u8868\u793A\uFF0C\u800C\u662F\u4F1A\u4E22\u5931\u7CBE\u5EA6\uFF0C\u4F8B\u5982\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
-    codeId: "7108548926332108837",
-    mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }, "Number.MAX_SAFE_INTEGER"), "\u4E4B\u95F4\u7684\u6574\u6570\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("a", {
+    parentName: "p",
+    "href": "https://code.juejin.cn/pen/7108539767356129287"
+  }, "\uD83D\uDC49\uD83C\uDFFB \u5728\u7EBF\u6F14\u793A")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "let n1 = 10, n2 = Number.MAX_SAFE_INTEGER, n3 = 1.2;\nconsole.log([Number.isSafeInteger(n1),\n              Number.isSafeInteger(n2),\n              Number.isSafeInteger(n3), // n3\u662F\u6D6E\u70B9\u6570\u4E0D\u662F\u6574\u6570\uFF0C \u6240\u4EE5\u7ED3\u679C\u4E5F\u4E3Afalse\n              Number.isSafeInteger(n2 + 1)]);\n\n//true, true, false, false\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u8D85\u8FC79007199254740991\u7684\u6574\u6570\u5E76\u4E0D\u662F\u4E0D\u80FD\u8868\u793A\uFF0C\u800C\u662F\u4F1A\u4E22\u5931\u7CBE\u5EA6\uFF0C\u4F8B\u5982\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("a", {
+    parentName: "p",
+    "href": "https://code.juejin.cn/pen/7108548926332108837"
+  }, "\uD83D\uDC49\uD83C\uDFFB \u5728\u7EBF\u6F14\u793A")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "const a = 9007199254740992, b = 9007199254740993;\n\nconsole.log(a, b, a === b);\n//9007199254740992, 9007199254740992, true\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "浮点数"
   }, "\u6D6E\u70B9\u6570"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6D6E\u70B9\u6570\u53EF\u4EE5\u8868\u793A\u5C0F\u6570\u3002\u89C4\u8303\u89C4\u5B9A\u6D6E\u70B9\u6570\u7684\u6574\u6570\u90E8\u5206\u5982\u679C\u662F0\uFF0C0\u53EF\u4EE5\u7701\u7565\u3002\u6D6E\u70B9\u6570\u4E5F\u53EF\u4EE5\u4F7F\u7528\u79D1\u5B66\u8BA1\u6570\u6CD5\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
     parentName: "pre",
@@ -339,10 +345,13 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "Number.MAX_VALUE"), "\u7684\u503C\uFF0C\u5728JavaScript\u91CC\u7528\u4E00\u4E2A\u7279\u6B8A\u7684\u7B26\u53F7Infinity\u8868\u793A\uFF0C\u540C\u6837\uFF0C\u5C0F\u4E8E", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
-  }, "-Number.MAX_VALUE"), "\u7684\u503C\u8868\u793A\u6210-Infinity\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
-    codeId: "7108560210805030942",
-    mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6839\u636E\u89C4\u8303\uFF0C\u6D6E\u70B9\u6570\u80FD\u8868\u793A\u7684\u6700\u63A5\u8FD1\u4E8E0\u7684\u503C\u662F5e-324\uFF0C\u8FD9\u4E2A\u503C\u7528", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+  }, "-Number.MAX_VALUE"), "\u7684\u503C\u8868\u793A\u6210-Infinity\u3002"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("a", {
+    parentName: "p",
+    "href": "https://code.juejin.cn/pen/7108560210805030942"
+  }, "\uD83D\uDC49\uD83C\uDFFB \u5728\u7EBF\u6F14\u793A")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "console.log(Number.MAX_VALUE * 2, -Number.MAX_VALUE * 2,\n    1 / 0, -1 / 0);\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6839\u636E\u89C4\u8303\uFF0C\u6D6E\u70B9\u6570\u80FD\u8868\u793A\u7684\u6700\u63A5\u8FD1\u4E8E0\u7684\u503C\u662F5e-324\uFF0C\u8FD9\u4E2A\u503C\u7528", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
   }, "Number.MIN_VALUE"), "\u8868\u793A\u3002\u53E6\u5916\uFF0C\u6D6E\u70B9\u6570\u6240\u80FD\u8868\u793A\u7684\u7CBE\u5EA6\u662F2.220446049250313e-16\uFF0C\u7528", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
@@ -350,16 +359,28 @@ function MDXContent(_ref) {
     "className": "hint tip"
   }, "\u6362\u4E00\u4E2A\u8BF4\u6CD5\u662F\uFF1A Number.MIN_VALUE\u662F\u6700\u5C0F\u7684\u6570\uFF0C \u800C\u7CBE\u5EA6(Number.EPSILON)\u662F\u80FD\u591F\u5224\u65AD\u51FA\u4E0D\u76F8\u7B49\u7684\u6700\u5C0F\u8BEF\u5DEE"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
     codeId: "7108560773164564494",
+    lazy: true,
     mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "IEEE 754\u6807\u51C6\u7684\u6D6E\u70B9\u6570\u8868\u793A\u6CD5\u672C\u8EAB\u6709\u7CBE\u5EA6\u9650\u5236\uFF0C\u6240\u4EE5\u624D\u6709\u4E86", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "let n1 = Number.MIN_VALUE,\n    n2 = 1,\n    n3 = n2 + n1,\n    n4 = n2 + Number.EPSILON;\n    \nconsole.log(n1 > 0, n2 < n3, n2 < n4); //true, false, true\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "IEEE 754\u6807\u51C6\u7684\u6D6E\u70B9\u6570\u8868\u793A\u6CD5\u672C\u8EAB\u6709\u7CBE\u5EA6\u9650\u5236\uFF0C\u6240\u4EE5\u624D\u6709\u4E86", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
   }, "Number.EPSILON"), "\uFF0C\u6211\u4EEC\u5728JavaScript\u4E2D\u8FDB\u884C\u6D6E\u70B9\u8FD0\u7B97\u65F6\u4E5F\u4F1A\u78B0\u5230\u7CBE\u5EA6\u95EE\u9898\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
     codeId: "7108561232612818951",
+    lazy: true,
     mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6240\u4EE5\u6211\u4EEC\u6BD4\u8F83\u6D6E\u70B9\u6570\u65F6\uFF0C\u4E0D\u80FD\u76F4\u63A5\u4F7F\u7528\u76F8\u7B49\u8FDB\u884C\u6BD4\u8F83\uFF0C\u5FC5\u987B\u4F7F\u7528\u7CBE\u5EA6\u6765\u6BD4\u8F83\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "console.log(0.1 + 0.2); // 0.30000000000000004\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6240\u4EE5\u6211\u4EEC\u6BD4\u8F83\u6D6E\u70B9\u6570\u65F6\uFF0C\u4E0D\u80FD\u76F4\u63A5\u4F7F\u7528\u76F8\u7B49\u8FDB\u884C\u6BD4\u8F83\uFF0C\u5FC5\u987B\u4F7F\u7528\u7CBE\u5EA6\u6765\u6BD4\u8F83\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
     codeId: "7108561526969073695",
+    lazy: true,
     mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "console.log(0.1 + 0.2 === 0.3); // false\n\nfunction floatEqual(a, b) {\n    return Math.abs(a - b) < Number.EPSILON;\n}\n\nconsole.log(floatEqual(0.1 + 0.2, 0.3)); // true\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "nan"
   }, "NaN"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u7B26\u53F7", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
@@ -369,15 +390,23 @@ function MDXContent(_ref) {
     "className": "hint tip"
   }, "\u4E24\u79CD\u60C5\u51B5\u5BFC\u81F4javascript\u8FD0\u7B97\u65F6\u4F1A\u51FA\u73B0NaN\u7684\u7ED3\u679C\uFF0C \u5982\u4E0B\u4F8B\u5B50\u6240\u793A\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
     codeId: "7108562003358121991",
+    lazy: true,
     mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "const n1 = Math.sqrt(-1),  // \u8D1F\u6570\u5F00\u5E73\u65B9\n    n2 = 3 * \"abc\"; // \u4E0E\u4E00\u4E2A\u4E0D\u80FD\u8F6C\u4E3A\u6570\u503C\u7684\u5B57\u7B26\u4E32\u8FDB\u884C\u8FD0\u7B97\n\nconsole.log(n1, n2); // NaN, NaN \n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
   }, "NaN"), "\u662F\u4E00\u4E2A\u5F88\u7279\u6B8A\u7684\u503C\uFF0C\u4E00\u822C\u6211\u4EEC\u5BF9\u6570\u503C\u662F\u53EF\u4EE5\u505A\u76F8\u7B49\u6BD4\u8F83\u7684\uFF0C\u4F46\u662F\u5982\u679C\u4E24\u4E2A\u6570\u503C\u662F", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
   }, "NaN"), "\uFF0C\u5B83\u4EEC\u7684\u6BD4\u8F83\u7ED3\u679C\u662F\u4E0D\u7B49\u7684\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
     codeId: "7108562354614304781",
+    lazy: true,
     mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6240\u4EE5\u8981\u5224\u65AD\u4E00\u4E2A\u7ED3\u679C\u662F\u5426\u662F", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "const a = 3, b = 3;\n\nconsole.log(a == b, a != b); // true, false\n\nconst c = NaN, d = NaN;\n\nconsole.log(c == d, c != d); // false, true\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "\u6240\u4EE5\u8981\u5224\u65AD\u4E00\u4E2A\u7ED3\u679C\u662F\u5426\u662F", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
   }, "NaN"), "\uFF0C\u4E0D\u80FD\u901A\u8FC7", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
@@ -385,8 +414,12 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "Number.isNaN"), "\u6765\u8FDB\u884C\u5224\u65AD\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
     codeId: "7108562962247319582",
+    lazy: true,
     mdxType: "JCode"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "const a = NaN;\nconsole.log(Number.isNaN(a)); // true\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     "id": "0和-0"
   }, "+0\u548C-0"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", null, "JavaScript\u7684\u6570\u503C0\u6709", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
     parentName: "p"
@@ -406,8 +439,12 @@ function MDXContent(_ref) {
     parentName: "p"
   }, "-0"), "\uFF1A"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_JCode__WEBPACK_IMPORTED_MODULE_5__["JCode"], {
     codeId: "7108563295614795812",
+    lazy: true,
     mdxType: "JCode"
-  }));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", {
+    parentName: "pre",
+    "className": "language-js"
+  }, "const a = 0, b = -0;\n\nconsole.log(a === b, 1 / a, 1 / b); // true Infinity -Infinity\n\nconsole.log(1 / Infinity, 1 / -Infinity); // 0 -0\n")));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !Object.prototype.hasOwnProperty.call(MDXContent, '__filemeta')) {
@@ -426,4 +463,4 @@ MDXContent.isMDXComponent = true;
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-docs-javascript-basic-类型-number-mdx-a2c3325d07368f63855b.js.map
+//# sourceMappingURL=component---src-docs-javascript-basic-类型-number-mdx-c1084241ee8328845537.js.map

@@ -90,4 +90,8 @@ div.more a {
   font-size: 16px;
 }
 
-/*# sourceMappingURL=styles.91ef6a3a4968f99116c6.css.map*/
+.lazy.show + div > pre {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.200abb50c59e4b13c43f.css.map*/

@@ -980,9 +980,11 @@ exports.f = DESCRIPTORS && !V8_PROTOTYPE_DEFINE_BUG ? Object.defineProperties : 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JCode", function() { return JCode; });
-/* harmony import */ var theme_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! theme-ui */ "zL5+");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "aD51");
-/** @jsx jsx */var JCode=function JCode(props,ref){var source="https://code.juejin.cn/pen/"+props.codeId;var iframeStyle={width:'100%',height:(props.height||420)+"px",border:'solid 1px #ccc',margin:'16px 0 32px 0'};return Object(theme_ui__WEBPACK_IMPORTED_MODULE_0__["jsx"])("iframe",{src:source,scrolling:"yes",style:iframeStyle,title:"jcode"});};if(typeof JCode!=='undefined'&&JCode&&JCode===Object(JCode)&&Object.isExtensible(JCode)&&!Object.prototype.hasOwnProperty.call(JCode,'__filemeta')){Object.defineProperty(JCode,'__filemeta',{configurable:true,value:{name:"JCode",filename:"src/components/JCode/index.js"}});}if(typeof JCode!=='undefined'&&JCode&&JCode===Object(JCode)&&Object.isExtensible(JCode)&&!Object.prototype.hasOwnProperty.call(JCode,'__filemeta')){Object.defineProperty(JCode,'__filemeta',{configurable:true,value:{name:"JCode",filename:"src/components/JCode/index.js"}});}
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "mXGw");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var theme_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! theme-ui */ "zL5+");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/core */ "aD51");
+/** @jsx jsx */var JCode=function JCode(_ref){var codeId=_ref.codeId,height=_ref.height,lazy=_ref.lazy;var source="https://code.juejin.cn/pen/"+codeId;var iframeStyle={width:'100%',height:(height||420)+"px",border:'solid 1px #ccc',margin:'16px 0 32px 0'};var ref=Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function(){if(lazy&&ref.current){var width=document.documentElement.offsetWidth;if(!ref.current.childNodes[0]&&width>767){var iframe=document.createElement('iframe');iframe.style="width:100%;height:"+(height||420)+"px;border:solid 1px #ccc;margin:16px 0 32px 0;";ref.current.appendChild(iframe);iframe.src=source;ref.current.className="lazy show";}}});if(lazy){return Object(theme_ui__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div",{ref:ref,className:"lazy"});}return Object(theme_ui__WEBPACK_IMPORTED_MODULE_1__["jsx"])("iframe",{ref:ref,src:source,scrolling:"no",style:iframeStyle,title:"jcode"});};if(typeof JCode!=='undefined'&&JCode&&JCode===Object(JCode)&&Object.isExtensible(JCode)&&!Object.prototype.hasOwnProperty.call(JCode,'__filemeta')){Object.defineProperty(JCode,'__filemeta',{configurable:true,value:{name:"JCode",filename:"src/components/JCode/index.js"}});}if(typeof JCode!=='undefined'&&JCode&&JCode===Object(JCode)&&Object.isExtensible(JCode)&&!Object.prototype.hasOwnProperty.call(JCode,'__filemeta')){Object.defineProperty(JCode,'__filemeta',{configurable:true,value:{name:"JCode",filename:"src/components/JCode/index.js"}});}
 
 /***/ }),
 
@@ -35106,4 +35108,4 @@ module.exports = function (object, key, value) {
 /***/ })
 
 },[["UxWs","webpack-runtime","framework","styles","06447f4e","f7728127"]]]);
-//# sourceMappingURL=app-caf21967948823b217dc.js.map
+//# sourceMappingURL=app-942fdcafd80ac439f97d.js.map
