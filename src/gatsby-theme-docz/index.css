@@ -88,3 +88,7 @@ div.more a {
   text-decoration: none;
   font-size: 16px;
 }
+
+.lazy.show + div > pre {
+  display: none;
+}

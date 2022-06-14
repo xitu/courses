@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { useCurrentDoc } from 'docz'
 
 import * as styles from './styles'
@@ -24,11 +24,6 @@ export const NavGroup = ({ item, sidebarRef, nested }) => {
     currentDoc.menu === name || currentDoc.submenu === name || nested
   )
   const toggleSubheadings = () => setShowsubheadings(!subheadingsVisible)
-  useEffect(() => {
-    if (sidebarRef.current && currentDocRef.current) {
-      sidebarRef.current.scrollTo(0, currentDocRef.current.offsetTop)
-    }
-  }, [])
   const submenus = {}
   const menus = [];
   if(menu) {
