@@ -61,7 +61,8 @@ import {Tabs} from '@/Tabs';
 
 根据规范，JavaScript可以**精确**表示的整数范围从$-2^{53}+1$到$2^{53}-1$，即-9007199254740991到9007199254740991，超过这个范围的整数，无法保证低位数字的精度。在ES5中，预先定义了一个常量`Number.MAX_SAFE_INTEGER`，它的值正好是9007199254740991。`Number.isSafeInteger(n)`用来检查一个值是否是`-Number.MAX_SAFE_INTEGER`到`Number.MAX_SAFE_INTEGER`之间的整数。
 
-[👉🏻 在线演示](https://code.juejin.cn/pen/7108539767356129287)
+<JCode codeId="7108539767356129287" lazy={true}/>
+
 ```js
 let n1 = 10, n2 = Number.MAX_SAFE_INTEGER, n3 = 1.2;
 console.log([Number.isSafeInteger(n1),
@@ -74,7 +75,8 @@ console.log([Number.isSafeInteger(n1),
 
 超过9007199254740991的整数并不是不能表示，而是会丢失精度，例如：
 
-[👉🏻 在线演示](https://code.juejin.cn/pen/7108548926332108837)
+<JCode codeId="7108548926332108837" lazy={true}/>
+
 ```js
 const a = 9007199254740992, b = 9007199254740993;
 
@@ -94,8 +96,8 @@ console.log(a, b, a === b);
 
 根据规范，浮点数能表示的最大值是1.7976931348623157e+308，用`Number.MAX_VALUE`表示，这意味着JavaScript的数值范围从-1.7976931348623157e+308到+1.7976931348623157e+308。大于`Number.MAX_VALUE`的值，在JavaScript里用一个特殊的符号Infinity表示，同样，小于`-Number.MAX_VALUE`的值表示成-Infinity。
 
+<JCode codeId="7108560210805030942" lazy={true}/>
 
-[👉🏻 在线演示](https://code.juejin.cn/pen/7108560210805030942)
 ```js
 console.log(Number.MAX_VALUE * 2, -Number.MAX_VALUE * 2,
 	1 / 0, -1 / 0);
